@@ -1,7 +1,7 @@
 #include "Character.h"
 Character::Character()
 {
-
+	set_Health(100);
 }
 
 Character::~Character()
@@ -9,12 +9,12 @@ Character::~Character()
 
 }
 
-void Character::get_Health()
+int Character::get_Health()
 {
-
+	return health;
 }
 
-void Character::set_Health()
+void Character::set_Health(int h)
 {
-
+	h = health;
 }

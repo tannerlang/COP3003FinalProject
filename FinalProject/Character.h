@@ -6,8 +6,8 @@ private:
 public:
 	Character();
 	~Character();
-	void get_Health();
-	void set_Health();
+	int get_Health();
+	void set_Health(int h);
 
 
 
