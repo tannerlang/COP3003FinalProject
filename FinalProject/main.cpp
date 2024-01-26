@@ -4,8 +4,16 @@
 int main()
 {
 	/*Creating Window*/
-	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Final Project");
 
+	float windowWidth = 400;
+	float windowHeight = 400;
+
+	sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Final Project");
+
+	sf::Texture texture;
+	(texture.loadFromFile("map.png"));
+	sf::Sprite sprite;
+	sprite.setTexture(texture);
 
 	/*Gameloop*/
 	while (window.isOpen())
@@ -20,7 +28,12 @@ int main()
 				window.close();
 			}
 		}
+
+		window.clear();
+		//window.draw(sprite);
+		window.display();
+
 	}
-	//Commit test
+	//Committing to the test
 //pull test
 }
