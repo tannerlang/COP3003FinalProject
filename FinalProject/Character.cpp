@@ -2,6 +2,7 @@
 Character::Character()
 {
 	set_Health(100);
+
 }
 
 Character::~Character()
