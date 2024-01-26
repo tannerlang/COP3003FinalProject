@@ -5,8 +5,8 @@ int main()
 {
 	/*Creating Window*/
 
-	float windowWidth = 400;
-	float windowHeight = 400;
+	float windowWidth = 1920;
+	float windowHeight = 1080;
 
 	sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Final Project");
 
@@ -30,7 +30,7 @@ int main()
 		}
 
 		window.clear();
-		//window.draw(sprite);
+		window.draw(sprite);
 		window.display();
 
 	}
