@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Brawler.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NPC_Enemy.cpp" />
@@ -159,6 +160,7 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Brawler.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="NPC_Enemy.h" />
     <ClInclude Include="Playable_Character.h" />
