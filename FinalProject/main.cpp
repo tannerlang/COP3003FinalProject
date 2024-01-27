@@ -11,7 +11,7 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Final Project");
 
 	sf::Texture texture;
-	(texture.loadFromFile("map.png"));
+	(texture.loadFromFile("Brawler_SouthFace_Default_64x64.png"));
 	sf::Sprite sprite;
 	sprite.setTexture(texture);
 

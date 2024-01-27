@@ -38,6 +38,9 @@
     <Image Include="..\..\..\..\..\Pictures\Programming 1\enemy.png">
       <Filter>images</Filter>
     </Image>
+    <Image Include="Brawler_SouthFace_Default_64x64.png">
+      <Filter>images</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">

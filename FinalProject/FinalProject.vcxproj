@@ -158,6 +158,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
     </Image>
+    <Image Include="Brawler_SouthFace_Default_64x64.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Brawler.h" />
