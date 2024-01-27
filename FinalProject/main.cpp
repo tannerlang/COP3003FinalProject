@@ -30,7 +30,7 @@ int main()
 		}
 
 		window.clear();
-		window.draw(sprite);
+		
 		window.display();
 
 	}
