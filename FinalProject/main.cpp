@@ -1,6 +1,6 @@
 #include<SFML/Graphics.hpp>
-#include "gameWorld.cpp"
-#include "gameTile.cpp"
+#include "gameWorld.h"
+#include "gameTile.h"
 
 int main()
 {
@@ -11,7 +11,7 @@ int main()
 
 	sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Final Project");
 
-	gameWorld gameWorld = gameWorld();
+	gameWorld gameWorld1 = gameWorld();
 
 
 	/*Gameloop*/
@@ -30,9 +30,9 @@ int main()
 
 		window.clear();
 		
-		for (int i = 0; i < gameWorld.gridLength; i++) {
-			for (int j = 0; j < gameWorld.gridLength; j++) {
-				window.draw(gameWorld.tiles[i][j]->sprite);
+		for (int i = 0; i < gameWorld1.gridLength; i++) {
+			for (int j = 0; j < gameWorld1.gridLength; j++) {
+				window.draw(gameWorld1.tiles[i][j]->sprite);
 			}
 		}
 
