@@ -1,5 +1,6 @@
 #include<SFML/Graphics.hpp>
-
+#include "gameWorld.cpp"
+#include "gameTile.cpp"
 
 int main()
 {
@@ -10,10 +11,8 @@ int main()
 
 	sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Final Project");
 
-	sf::Texture texture;
-	(texture.loadFromFile("Brawler_SouthFace_Default_64x64.png"));
-	sf::Sprite sprite;
-	sprite.setTexture(texture);
+	gameWorld gameWorld = gameWorld();
+
 
 	/*Gameloop*/
 	while (window.isOpen())
@@ -31,6 +30,14 @@ int main()
 
 		window.clear();
 		
+		for (int i = 0; i < gameWorld.gridLength; i++) {
+			for (int j = 0; j < gameWorld.gridLength; j++) {
+				window.draw(gameWorld.tiles[i][j]->sprite);
+			}
+		}
+
+
+
 		window.display();
 
 	}

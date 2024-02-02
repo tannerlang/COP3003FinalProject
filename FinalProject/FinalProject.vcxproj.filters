@@ -30,15 +30,24 @@
     <ClCompile Include="Brawler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gameTile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gameWorld.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\..\AppData\Local\Temp\Rar%24DIa7008.48724\map.png">
-      <Filter>images</Filter>
-    </Image>
     <Image Include="..\..\..\..\..\Pictures\Programming 1\enemy.png">
       <Filter>images</Filter>
     </Image>
     <Image Include="Brawler_SouthFace_Default_64x64.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Desktop\gametiles\wall.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Desktop\gametiles\plains.png">
       <Filter>images</Filter>
     </Image>
   </ItemGroup>
@@ -55,5 +64,19 @@
     <ClInclude Include="Brawler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="gameTile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gameWorld.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FinalProject1.rc">
+      <Filter>images</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
