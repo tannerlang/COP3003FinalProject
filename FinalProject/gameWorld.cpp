@@ -33,7 +33,7 @@ void gameWorld::setUpTiles() {
 	firstRow.push_back(new gameTile("wall.png", 150, 0, false, false));
 	firstRow.push_back(new gameTile("wall.png", 200, 0, false, false)); 
 	firstRow.push_back(new gameTile("wall.png", 250, 0, false, false));
-	firstRow.push_back(new gameTile("enemy.png", 300, 0, true, false));
+	firstRow.push_back(new gameTile("plains.png", 300, 0, true, false));
 	firstRow.push_back(new gameTile("plains.png", 350, 0, false, false));
 	tiles.push_back(firstRow);
 
@@ -114,4 +114,27 @@ void gameWorld::setUpTiles() {
 	eigthRow.push_back(new gameTile("plains.png", 350, 350, true, false));
 	tiles.push_back(eigthRow);
 
+	std::vector<gameTile*>ninthRow;
+	ninthRow.push_back(new gameTile("wall.png", 0, 400, false, false));
+	ninthRow.push_back(new gameTile("plains.png", 50, 400, false, false));
+	ninthRow.push_back(new gameTile("plains.png", 100, 400, true, false));
+	ninthRow.push_back(new gameTile("plains.png", 150, 400, false, false));
+	ninthRow.push_back(new gameTile("plains.png", 200, 400, false, false));
+	ninthRow.push_back(new gameTile("plains.png", 250, 400, true, false));
+	ninthRow.push_back(new gameTile("plains.png", 300, 400, true, false));
+	ninthRow.push_back(new gameTile("plains.png", 350, 400, true, false));
+	tiles.push_back(ninthRow);
+
+	/*
+	y=0
+	for(int row = )
+	{
+		x = 0;
+		std::vector<gameTile*>tileRow;
+		for(int column = )
+		{
+			tileRow.push_back(...) ---dynamic image placement?
+		}
+	}
+	*/
 }
