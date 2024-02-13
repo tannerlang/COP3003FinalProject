@@ -30,13 +30,17 @@ int main()
 
 		window.clear();
 		
-		for (int i = 0; i < gameWorld1.gridLength; i++) {
-			for (int j = 0; j < gameWorld1.gridLength; j++) {
-				window.draw(gameWorld1.tiles[i][j]->sprite);
+//		for (int i = 0; i < gameWorld1.gridLength; i++) {
+//			for (int j = 0; j < gameWorld1.gridLength; j++) {
+//				window.draw(gameWorld1.tiles[i][j]->sprite);
+//			}
+//		}
+
+		for (int row = 0; row < gameWorld1.tiles.size(); row++) {
+			for (int col = 0; col < gameWorld1.tiles[row].size(); col++) {
+				window.draw(gameWorld1.tiles[row][col]->sprite);
 			}
 		}
-
-
 
 		window.display();
 

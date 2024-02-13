@@ -2,7 +2,7 @@
 
 
 gameWorld::gameWorld() {
-	gridLength = 8;
+	gridLength = 16;
 	setUpInitialState();
 }
 
