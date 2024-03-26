@@ -992,7 +992,7 @@ void gameWorld::setUpTiles() {
 	twentythirdRow.push_back(new gameTile("wall.png", 1900, 1100, true, false));
 	tiles.push_back(twentythirdRow);
 
-	//to test this in forloop, use only grass.png for all tiles. (as a test)
+	//to test this in forloop, use only plains.png for all tiles. (as a test)
 	/*
 	y=0
 	for(int row = )

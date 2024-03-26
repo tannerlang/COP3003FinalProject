@@ -32,6 +32,7 @@ public:
 	~Character();
 	int get_Health();
 	void set_Health(int h);
+	
 
 
 };
