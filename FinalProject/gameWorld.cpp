@@ -23,6 +23,19 @@ void gameWorld::setUpEnemyPositions() {
 	enemyPositions.push_back(sf::Vector2i(2, 7));
 }
 
+//to test this in forloop, use only plains.png for all tiles. (as a test)
+	/*
+	y=0
+	for(int row = 0; row <= 22; row++)
+	{
+		y = 0;
+		std::vector<gameTile*>tileRow;
+		for(int column = 0; column <= 38; column++)
+		{
+			tileRow.push_back(...) ---dynamic image placement?
+		}
+	}
+	*/
 
 void gameWorld::setUpTiles() {
 	tiles.clear();
@@ -992,17 +1005,5 @@ void gameWorld::setUpTiles() {
 	twentythirdRow.push_back(new gameTile("wall.png", 1900, 1100, true, false));
 	tiles.push_back(twentythirdRow);
 
-	//to test this in forloop, use only plains.png for all tiles. (as a test)
-	/*
-	y=0
-	for(int row = )
-	{
-		x = 0;
-		std::vector<gameTile*>tileRow;
-		for(int column = )
-		{
-			tileRow.push_back(...) ---dynamic image placement?
-		}
-	}
-	*/
+	
 }
