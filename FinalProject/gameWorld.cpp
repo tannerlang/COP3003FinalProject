@@ -23,12 +23,6 @@ void gameWorld::setUpEnemyPositions() {
 	enemyPositions.push_back(sf::Vector2i(2, 7));
 }
 
-//to test this in forloop, use only plains.png for all tiles. (as a test)
-	
-
-	
-	
-
 void gameWorld::setUpTiles() {
 	tiles.clear();
 	std::vector<gameTile*>tileRow;
@@ -45,6 +39,8 @@ void gameWorld::setUpTiles() {
 		y += 50;
 		tiles.push_back(tileRow);
 	}
+
+
 	/*
 	firstRow.push_back(new gameTile("wall.png", 0, 0, false, false));
 	firstRow.push_back(new gameTile("wall.png", 50, 0, true, true));
