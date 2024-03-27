@@ -38,7 +38,7 @@ void gameWorld::setUpTiles() {
 		}
 		y += 50;
 		tiles.push_back(tileRow);
-	}
+	}																						//nested forlopp populates map in sf::window
 
 
 	/*
