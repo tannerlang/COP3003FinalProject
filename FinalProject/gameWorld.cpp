@@ -1,36 +1,38 @@
 #include "gameWorld.h"
 
-
-gameWorld::gameWorld() {
+gameWorld::gameWorld() 
+{
 	gridLength = 16;
 	setUpInitialState();
 }
 
 
-void gameWorld::setUpInitialState() {
+void gameWorld::setUpInitialState() 
+{
 	exitPos = sf::Vector2i(1,0);
 	playerPos = sf::Vector2i(gridLength - 1, gridLength - 1);
 	setUpEnemyPositions();
 	setUpTiles();
-
 }
 
 
-void gameWorld::setUpEnemyPositions() {
+void gameWorld::setUpEnemyPositions() 
+{
 	enemyPositions.clear();
 	enemyPositions.push_back(sf::Vector2i(0, 2));
 	enemyPositions.push_back(sf::Vector2i(6, 2));
 	enemyPositions.push_back(sf::Vector2i(2, 7));
 }
 
-void gameWorld::setUpTiles() {
+void gameWorld::setUpTiles()
+{
 	tiles.clear();
 	std::vector<gameTile*>tileRow;
 	float y = 0;
 	for (int row = 0; row <= 22; row++)
 	{
 		float x = 0;
-		
+
 		for (int column = 0; column <= 38; column++)
 		{
 			tileRow.push_back(new gameTile("plains.png", x, y, true, true));
@@ -39,7 +41,7 @@ void gameWorld::setUpTiles() {
 		y += 50;
 		tiles.push_back(tileRow);
 	}																						//nested forlopp populates map in sf::window
-
+}
 
 	/*
 	firstRow.push_back(new gameTile("wall.png", 0, 0, false, false));
@@ -1008,4 +1010,3 @@ void gameWorld::setUpTiles() {
 	tiles.push_back(twentythirdRow);
 	*/
 	
-}
