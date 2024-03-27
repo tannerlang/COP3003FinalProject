@@ -29,16 +29,6 @@ int main()
 		}
 
 		window.clear();
-		
-		/*
-		for (int i = 0; i < gameWorld1.gridLength; i++)					//gridlength = 38?  and //gridheight = 23?
-		{
-			for (int j = 0; j < gameWorld1.gridLength; j++)		
-			{
-				window.draw(gameWorld1.tiles[i][j]->sprite);
-			}
-		}
-		*/
 
 		for (int row = 0; row < gameWorld1.tiles.size(); row++) 
 		{
