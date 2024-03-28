@@ -2,9 +2,13 @@
 #include "Playable_Character.h"
 class Brawler : public Playable_Character
 {
-public:
+private:
     sf::Texture brawlerTexture;
     sf::Sprite brawlerSprite;
+    float movementSpeed;
+
+public:
+    
     void initTexture();
     void initSprite();
 
