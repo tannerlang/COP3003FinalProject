@@ -5,8 +5,6 @@ class Brawler : public Playable_Character
 private:
     sf::Texture brawlerTexture;
     sf::Sprite brawlerSprite;
-    float movementSpeed;
-
 public:
     
     void initTexture();

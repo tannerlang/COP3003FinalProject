@@ -1,9 +1,11 @@
 #include<SFML/Graphics.hpp>
 #include "gameWorld.h"
 #include "gameTile.h"
+#include"Brawler.h"
 
 int main()
 {
+	//------------------------------NOTE TO SELF, DIVIDE THESE UP INTO FUNCTIONS-------------------------------------
 	/*Creating Window*/
 
 	float windowWidth = 1920;
@@ -13,7 +15,7 @@ int main()
 
 	gameWorld gameWorld1 = gameWorld();
 
-
+	//------------------------------UPDATE FUNCTION--------------------------------------------------------------------
 	/*Gameloop*/
 	while (window.isOpen())
 	{
@@ -27,7 +29,31 @@ int main()
 				window.close();
 			}
 		}
+		//TODO: create function to pick a class which would create the respective character object, brawler or archer
+		Brawler* player;
+		this	//may have to have the gameloop be an object and etc.. youtube video 5:42
+		//moving player
+		/*
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			// move left...
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			// move right...
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+		{
+			//move up
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		{
+			//move down
+		}
+		*/
+		//add controller support
 
+//------------------------------RENDER FUNCTION-----------------------------------------------------------------------
 		window.clear();
 
 		for (int row = 0; row < gameWorld1.tiles.size(); row++) 
@@ -40,6 +66,4 @@ int main()
 
 		window.display();
 	}
-	//Committing to the test
-//pull test
 }

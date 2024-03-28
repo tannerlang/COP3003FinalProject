@@ -1,26 +1,15 @@
 #include "Playable_Character.h"
 #include<SFML/Graphics.hpp>
 
-void Playable_Character::moveCharacter(int x,int y)
+Playable_Character::Playable_Character()
+{
+    this->set_Movement_Speed(10.0);                       //in constructor setting movement speed of the character.
+}
+
+
+void Playable_Character::moveCharacter(const int x,const int y)
 {
 	int changeX, changeY;
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-    {
-        // move left...
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-    {
-        // move right...
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-    {
-        //move up
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-    {
-        //move down
-    }
-
-    //add controller support
+    this->brawlerSprite.move(this->get_Movement_Speed() * x, this->get_Movement_Speed() * y);
 }

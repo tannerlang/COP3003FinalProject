@@ -17,6 +17,7 @@ private:
 	int speed;
 	int attack_speed;
 	float crit_chance;
+	float movementSpeed;
 
 	//attributes
 	int vitality;	//health and stamina
@@ -34,6 +35,8 @@ public:
 	~Character();
 	int get_Health();
 	void set_Health(int h);
+	void set_Movement_Speed(float x);
+	float get_Movement_Speed();
 	
 
 

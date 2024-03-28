@@ -37,3 +37,13 @@ void Character::set_Health(int h)
 {
 	h = health;
 }
+
+void Character::set_Movement_Speed(float x)
+{
+	movementSpeed = x;
+}
+
+float Character::get_Movement_Speed()
+{
+	return movementSpeed;
+}
