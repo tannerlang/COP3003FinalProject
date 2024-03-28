@@ -36,6 +36,9 @@
     <ClCompile Include="gameWorld.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\Pictures\Programming 1\enemy.png">
@@ -72,6 +75,9 @@
     </ClInclude>
     <ClInclude Include="gameWorld.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@
 #include "gameWorld.h"
 #include "gameTile.h"
 #include"Brawler.h"
-
+#include"game.h"
 int main()
 {
 	//------------------------------NOTE TO SELF, DIVIDE THESE UP INTO FUNCTIONS-------------------------------------
@@ -31,7 +31,7 @@ int main()
 		}
 		//TODO: create function to pick a class which would create the respective character object, brawler or archer
 		Brawler* player;
-		this	//may have to have the gameloop be an object and etc.. youtube video 5:42
+		//may have to have the gameloop be an object and etc.. youtube video 5:42
 		//moving player
 		/*
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
