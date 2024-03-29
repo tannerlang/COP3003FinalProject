@@ -24,7 +24,7 @@ void gameWorld::setUpEnemyPositions()
 	enemyPositions.clear();
 	enemyPositions.push_back(sf::Vector2i(0, 2));
 	enemyPositions.push_back(sf::Vector2i(6, 2));
-	enemyPositions.push_back(sf::Vector2i(2, 7));										//places enemies is their enemyPositons vector
+	enemyPositions.push_back(sf::Vector2i(2, 7));					//places enemies is their enemyPositons vector
 }
 
 void gameWorld::setUpTiles()									//populates tiles vector
