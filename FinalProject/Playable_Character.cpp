@@ -3,7 +3,7 @@
 
 Playable_Character::Playable_Character()
 {
-    this->set_Movement_Speed(10.0);                       //in constructor setting movement speed of the character.
+    this->set_Movement_Speed(3.f);                       //in constructor setting movement speed of the character.
 }
 
 
