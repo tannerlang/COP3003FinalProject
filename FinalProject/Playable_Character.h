@@ -7,7 +7,7 @@ private:
 public:
 	Playable_Character();
 	
-	void moveCharacter(const int x,const int y);
+	void moveCharacter(const int dirX,const int dirY);
 
 };
 

@@ -47,6 +47,23 @@ void Game::update()
 		}
 		this->render();
 		//Move player
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			this->brawler->moveCharacter(-1.f, 0.f);
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			this->brawler->moveCharacter(1.f, 0.f);
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+		{
+			this->brawler->moveCharacter(0.f, -1.f);
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		{
+			this->brawler->moveCharacter(0.f, 1.f);
+		}
+		//TODO: add controller support
 	}
 }
 

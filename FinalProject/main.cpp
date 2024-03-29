@@ -8,29 +8,5 @@ int main()
 	Game PlayGame;
 	PlayGame.run();
 
-		//TODO: create function to pick a class which would create the respective character object, brawler or archer
-		//Brawler* player;
-		//may have to have the gameloop be an object and etc.. youtube video 5:42
-		//moving player
-		/*
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		{
-			// move left...
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		{
-			// move right...
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		{
-			//move up
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		{
-			//move down
-		}
-		
-		//add controller support
-		*/
-
+		//TODO:figure out how to have class selection so that in the game class files we are not just calling brawler, we need to be able to call archer too and it be dynamic.
 }

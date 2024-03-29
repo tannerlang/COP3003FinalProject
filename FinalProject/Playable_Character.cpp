@@ -7,10 +7,10 @@ Playable_Character::Playable_Character()
 }
 
 
-void Playable_Character::moveCharacter(const int x,const int y)
+void Playable_Character::moveCharacter(const int dirX,const int dirY)
 {
-	int changeX, changeY;
+	
 
-    //this->brawlerSprite.move(this->get_Movement_Speed() * x, this->get_Movement_Speed() * y);                   //need to figure out how to do this with the sprite created in a child class.
+    this->sprite.move(this->get_Movement_Speed() * dirX, this->get_Movement_Speed() * dirY);                   //need to figure out how to do this with the sprite created in a child class.
                                                                                                              //for now leave it to make sure it works
 }
