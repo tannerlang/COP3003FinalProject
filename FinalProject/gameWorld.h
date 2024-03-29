@@ -8,9 +8,9 @@
 class gameWorld {
 
 
-	sf::Vector2i exitPos;
-	sf::Vector2i playerPos;
-	std::vector<sf::Vector2i> enemyPositions;
+	sf::Vector2i exitPos;											//two dimension vector exitPos
+	sf::Vector2i playerPos;											//two dimension vector for play position.
+	std::vector<sf::Vector2i> enemyPositions;						//two dimensin vector for enemy positon.
 	void setUpInitialState();
 	void setUpEnemyPositions();
 	void setUpTiles();
@@ -18,7 +18,7 @@ class gameWorld {
 public:
 
 	std::vector< std::vector<gameTile*>> tiles;
-	int gridLength;
+	int gridLength,gridHeight;
 	gameWorld();
 };
 

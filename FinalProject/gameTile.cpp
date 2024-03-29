@@ -5,8 +5,8 @@ gameTile::gameTile(std::string textureName, float x, float y, bool passable, boo
 	if (!setUpSprite(textureName)) {
 		return;
 	}
-	pos = sf::Vector2f(x, y);
-	sprite.setPosition(pos);
+	pos = sf::Vector2f(x, y);					//creates a 2d vector called pos, x and y are passed from gameWorld forloop which is where the next tile will be
+	sprite.setPosition(pos);					//sets the position of the sprite to position of pos(passed variable from tile vector in forloop)
 
 	isPassable = passable;
 	isExit = exit;
@@ -14,11 +14,11 @@ gameTile::gameTile(std::string textureName, float x, float y, bool passable, boo
 
 
 bool gameTile::setUpSprite(std::string textureName) {
-	if (!texture.loadFromFile(textureName)) {
+	if (!texture.loadFromFile(textureName)) {							
 		return false;
 	}
-	texture.setSmooth(true);
-	sprite.setTexture(texture);
-	sprite.setTextureRect(sf::IntRect(0, 0, 64, 64));
+	texture.setSmooth(true);													//if the texture can load
+	sprite.setTexture(texture);													//set the texture to whatever is passed
+	sprite.setTextureRect(sf::IntRect(0, 0, 64, 64));							//set 64 pixels x 64 pixel size
 	return true;
 }
