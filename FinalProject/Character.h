@@ -28,7 +28,9 @@ private:
 
 
 
-
+protected:
+	sf::Texture texture;
+	sf::Sprite sprite;
 	
 public:
 	Character();
@@ -39,6 +41,7 @@ public:
 	float get_Movement_Speed();
 	void update();
 	void render(sf::RenderTarget& target);
+	
 	
 
 

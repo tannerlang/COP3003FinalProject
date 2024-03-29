@@ -3,8 +3,7 @@
 class Playable_Character : public Character
 {
 private:
-	sf::Texture brawlerTexture;
-	sf::Sprite brawlerSprite;										//need to figure out how to use th
+
 public:
 	Playable_Character();
 	

@@ -1,9 +1,14 @@
 #include "Brawler.h"
 
+Brawler::Brawler()
+{
+	this->initTexture();
+	this->initSprite();
+};
 
 void Brawler::initTexture()
 {
-	if (!this->brawlerTexture.loadFromFile("Brawler_SouthFace_Default_64x64.png"))
+	if (!this->texture.loadFromFile("Brawler_SouthFace_Default_64x64.png"))
 	{
 		std::cout << "Texture Load Failure";
 	}
@@ -12,7 +17,7 @@ void Brawler::initTexture()
 void Brawler::initSprite()
 {
 	//set texture to sprite
-	this->brawlerSprite.setTexture(this->brawlerTexture);
+	this->sprite.setTexture(this->texture);
 
 	//resize sprite
 

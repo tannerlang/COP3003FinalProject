@@ -13,11 +13,13 @@ void Game::initWindow()
 Game::Game()
 {
 	this->initWindow();
+	this->initPlayer();
 }
 
 Game::~Game()
 {
 	delete this->window;
+	delete this->brawler;
 }
 
 //functions
@@ -44,6 +46,7 @@ void Game::update()
 			}
 		}
 		this->render();
+		//Move player
 	}
 }
 
@@ -60,5 +63,17 @@ void Game::render()
 			this->window->draw(gameWorld1.tiles[row][col]->sprite);				//drawing the sprite in column vector, which is a vector in the row vector
 		}
 	}
+
+	//Draw player
+	this->brawler->render(*this->window);										//drawing brawler to screen
+
 	this->window->display();
+}
+
+void Game::initPlayer()
+{	//if character is brawler
+	this->brawler = new Brawler();
+
+
+	//if character is archer
 }
