@@ -32,13 +32,13 @@ private:
 	
 public:
 	Character();
-	~Character();
+	virtual ~Character();
 	int get_Health();
 	void set_Health(int h);
 	void set_Movement_Speed(float x);
 	float get_Movement_Speed();
 	void update();
-	void render();
+	void render(sf::RenderTarget& target);
 	
 
 

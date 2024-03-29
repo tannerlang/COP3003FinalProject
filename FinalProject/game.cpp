@@ -5,6 +5,8 @@
 void Game::initWindow()
 {
 	this->window = new sf::RenderWindow(sf::VideoMode(windowWidth, windowHeight), "Final Project");
+	this->window->setFramerateLimit(240);
+	this->window->setVerticalSyncEnabled(false);
 	
 }
 

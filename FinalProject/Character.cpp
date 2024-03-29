@@ -28,15 +28,17 @@ Character::~Character()
 
 }
 
-void update()
+//Functions
+void Character::update()
 {
 
 }
 
-void render()
+void Character::render(sf::RenderTarget& target)
 {
 
 }
+
 
 int Character::get_Health()
 {
