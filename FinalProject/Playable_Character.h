@@ -7,6 +7,7 @@ private:
 	sf::Sprite brawlerSprite;
 public:
 	Playable_Character();
+	
 	void moveCharacter(const int x,const int y);
 
 };

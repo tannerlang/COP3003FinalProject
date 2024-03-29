@@ -37,6 +37,8 @@ public:
 	void set_Health(int h);
 	void set_Movement_Speed(float x);
 	float get_Movement_Speed();
+	void update();
+	void render();
 	
 
 

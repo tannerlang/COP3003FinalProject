@@ -17,7 +17,7 @@ class gameWorld {
 
 public:
 
-	std::vector< std::vector<gameTile*> > tiles;
+	std::vector< std::vector<gameTile*>> tiles;
 	int gridLength;
 	gameWorld();
 };

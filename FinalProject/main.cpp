@@ -5,8 +5,11 @@
 #include"game.h"
 int main()
 {
+	Game PlayGame;
+	PlayGame.run();
+	/*
 	//------------------------------NOTE TO SELF, DIVIDE THESE UP INTO FUNCTIONS-------------------------------------
-	/*Creating Window*/
+	//Creating Window
 
 	float windowWidth = 1920;
 	float windowHeight = 1080;
@@ -16,14 +19,14 @@ int main()
 	gameWorld gameWorld1 = gameWorld();
 
 	//------------------------------UPDATE FUNCTION--------------------------------------------------------------------
-	/*Gameloop*/
+	/*Gameloop
 	while (window.isOpen())
 	{
-		/*Event*/
+		/*Event
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
-			/*Exit*/
+			/*Exit
 			if (event.type == sf::Event::Closed)
 			{
 				window.close();
@@ -50,7 +53,7 @@ int main()
 		{
 			//move down
 		}
-		*/
+		
 		//add controller support
 
 //------------------------------RENDER FUNCTION-----------------------------------------------------------------------
@@ -66,4 +69,6 @@ int main()
 
 		window.display();
 	}
+	*/
+	return 0;
 }

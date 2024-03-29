@@ -28,6 +28,16 @@ Character::~Character()
 
 }
 
+void update()
+{
+
+}
+
+void render()
+{
+
+}
+
 int Character::get_Health()
 {
 	return health;

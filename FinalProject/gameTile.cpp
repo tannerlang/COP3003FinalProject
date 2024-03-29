@@ -19,6 +19,6 @@ bool gameTile::setUpSprite(std::string textureName) {
 	}
 	texture.setSmooth(true);
 	sprite.setTexture(texture);
-	sprite.setTextureRect(sf::IntRect(0, 0, 50, 50));
+	sprite.setTextureRect(sf::IntRect(0, 0, 64, 64));
 	return true;
 }
