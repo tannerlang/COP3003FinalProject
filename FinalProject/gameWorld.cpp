@@ -27,7 +27,7 @@ void gameWorld::setUpEnemyPositions()
 	enemyPositions.push_back(sf::Vector2i(2, 7));										//places enemies is their enemyPositons vector
 }
 
-void gameWorld::setUpTiles()
+void gameWorld::setUpTiles()									//populates tiles vector
 {
 	tiles.clear();
 	std::vector<gameTile*>tileRow;								/*creates a vector of gameTile objects called tileRow.(creates texture and sprite in that location if it can load)

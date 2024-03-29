@@ -24,7 +24,6 @@ void Game::run()
 	while (this->window->isOpen())
 	{
 		this->update();									
-		this->render();
 	}
 }
 
@@ -42,6 +41,7 @@ void Game::update()
 				this->window->close();
 			}
 		}
+		this->render();
 	}
 }
 
@@ -49,16 +49,14 @@ void Game::update()
 void Game::render()
 {
 	this->window->clear();
-
+	
 	//drawing map 
-	//TODO:!!!(FIGURE OUT WHY MAP ISNT POPULATING ANYMORE)!!!
-	for (int row = 0; row < this->gameWorld1->tiles.size(); row++)						//gameWorld1.tiles.size() returns num of elements
+	for (int row = 0; row < gameWorld1.tiles.size(); row++)						//gameWorld1.tiles.size() returns num of elements
 	{
-		for (int col = 0; col < this->gameWorld1->tiles[row].size(); col++)				//tiles vector's element is a vector, calling that size, which is size of gridLength
+		for (int col = 0; col < gameWorld1.tiles[row].size(); col++)			//tiles vector's element is a vector, calling that size, which is size of gridLength
 		{
-			this->window->draw(this->gameWorld1->tiles[row][col]->sprite);				//drawing the sprite in column vector, which is a vector in the row vector
+			this->window->draw(gameWorld1.tiles[row][col]->sprite);				//drawing the sprite in column vector, which is a vector in the row vector
 		}
 	}
-
 	this->window->display();
 }
