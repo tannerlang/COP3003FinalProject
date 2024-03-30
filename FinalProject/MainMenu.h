@@ -8,6 +8,8 @@ private:
 	float MMwindowHeight = 500;
 	sf::RenderWindow* MMwindow;
 	void MMinitWindow();
+	
+
 public:
 	MainMenu();
 	virtual ~MainMenu();
@@ -15,5 +17,10 @@ public:
 	void MMupdate();
 	void MMrender();
 	bool boolOpen();
+	void loadText()
+	{
+		
+		
+	}
 };
 

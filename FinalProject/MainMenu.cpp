@@ -1,12 +1,13 @@
 #include "MainMenu.h"
 MainMenu::MainMenu()
 {
+	this->loadFont();
 	this->MMinitWindow();
 }
 
 MainMenu::~MainMenu()
 {
-	delete this->MMwindow;
+	//send data of selected character to game class in here?
 }
 void MainMenu::MMinitWindow()
 {
@@ -44,7 +45,9 @@ void MainMenu::MMrender()
 {
 	this->MMwindow->clear();
 
+	
 	//drawing stuff here
+	this->MMwindow->draw(Text);
 
 	this->MMwindow->display();
 }

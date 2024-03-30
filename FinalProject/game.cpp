@@ -138,8 +138,7 @@ void Game::selectCharacter(int select)											//Function Objective: Call in g
 
 void Game::selectCharacterWidget()
 {
-	this->menu = MainMenu();
-	menu.MMrun();
+	menu.MMrun();								//this works. 
 
 
 
