@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Archer.cpp" />
     <ClCompile Include="Brawler.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="game.cpp" />
@@ -160,6 +161,7 @@
     <Image Include="Brawler_SouthFace_Default_64x64.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Archer.h" />
     <ClInclude Include="Brawler.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="game.h" />

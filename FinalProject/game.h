@@ -6,6 +6,7 @@
 
 class Game
 {
+
 private: 
 
 	float windowWidth = 1920;

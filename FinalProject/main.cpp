@@ -1,8 +1,8 @@
-#include<SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include "gameWorld.h"
 #include "gameTile.h"
-#include"Brawler.h"
-#include"game.h"
+#include "Brawler.h"
+#include "game.h"
 int main()
 {
 	Game PlayGame;

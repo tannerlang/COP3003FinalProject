@@ -2,24 +2,20 @@
 
 Brawler::Brawler()
 {
-	this->initTexture();
+	this->initTexture();	//Calls on the pointers  
 	this->initSprite();
 };
 
-void Brawler::initTexture()
+void Brawler::initTexture()	//Inputting information to pointer
 {
-	if (!this->texture.loadFromFile("Brawler_SouthFace_Default_64x64.png"))
+	if (!this->texture.loadFromFile("Brawler_SouthFace_Default_64x64.png"))	//Displays PNG for Brawler
 	{
-		std::cout << "Texture Load Failure";
+		std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
 	}
 }
 
-void Brawler::initSprite()
+void Brawler::initSprite()	
 {
-	//set texture to sprite
-	this->sprite.setTexture(this->texture);
-
-	//resize sprite
-
+	this->sprite.setTexture(this->texture);	//set texture to sprite
 }
 
