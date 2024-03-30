@@ -12,6 +12,7 @@ void Game::initWindow()
 
 Game::Game()
 {
+	user = nullptr;
 	this->initWindow();
 	this->initPlayer();
 	//this->selectCharacter();
@@ -21,7 +22,7 @@ Game::Game()
 Game::~Game()
 {
 	delete this->window;
-	delete this->brawler;
+	delete this->user;
 	//delete this->enemy;
 }
 
@@ -52,19 +53,19 @@ void Game::update()
 		//Move player
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
-			this->brawler->moveCharacter(-1.f, 0.f);
+			this->user->moveCharacter(-1.f, 0.f);
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
-			this->brawler->moveCharacter(1.f, 0.f);
+			this->user->moveCharacter(1.f, 0.f);
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
-			this->brawler->moveCharacter(0.f, -1.f);
+			this->user->moveCharacter(0.f, -1.f);
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		{
-			this->brawler->moveCharacter(0.f, 1.f);
+			this->user->moveCharacter(0.f, 1.f);
 		}
 		//TODO: add controller support
 	}
@@ -84,50 +85,48 @@ void Game::render()
 		}
 	}
 
-	//Draw player
-	this->brawler->render(*this->window);	//drawing brawler to screen
+	
+	if (CharacterSelected)					//this currently draw screen white (since bool is false) game doesnt crash anymore. Will draw screen when character is selected.
+	{
+		//Draw Player
+		this->user->render(*this->window);
 
-	//this->archer->render(*this->window);	//drawing archer to screen
-
-	//this->enemy->render(*this->window);		//drawing enemy to screen
-
-	this->window->display();
+		//Draw map
+		this->window->display();
+	}
+	
 }
 
-void Game::initPlayer()			//Should an initEnemy function be made?
-{	//if character is brawler
-
-	this->brawler = new Brawler();		/*In the future, current player will be the only player object in game.cpp CurrentPlayer
-										will handle deciding what character object is chosen*/
-
-	//if character is archer
-
-	//this->archer = new Archer();
-
+void Game::initPlayer()			//Should an initEnemy function be made? probably
+{	
+	//this->user = new class() is set up in select character now.
 }
 
 
-//function to select player call in game() constructor or in initwindow()
-//call to open a window to select
-CurrentPlayer Game::selectCharacter(int select)
+void Game::selectCharacter(int select)											//Function Objective: Call in game() to select character, 
 {
-	//link this select argument with a widget to select character.
-	buildClass* pbuildClass = new buildClass();
+	//TODO: link this 'select' argument with a widget to select character.
+	buildClass* pbuildClass = new buildClass();									//creates pointer to buldClass called pbuildClass and initializes it.
 	
 	if (select == 0)
 	{
-		pbuildClass->playableCharacterObject(Playable_Character::Brawl);
-		pbuildClass->getPlayable_Character();
-		CurrentPlayer* user = pbuildClass->getPlayable_Character();
-		 
+		pbuildClass->playableCharacterObjectBuilder(Playable_Character::Brawl);	//using pointer, call object builder an pass "code" which tells factory what object to build.			
+		user = pbuildClass->getPlayable_Character();							//sets user(pointer to playable character object) equal to the object that the factory built
+		CharacterSelected = true;
 	}
 	if (select == 1)
 	{
-		pbuildClass->playableCharacterObject(Playable_Character::Arch);
-		pbuildClass->getPlayable_Character();
+		pbuildClass->playableCharacterObjectBuilder(Playable_Character::Arch);			
+		user = pbuildClass->getPlayable_Character();			
+		CharacterSelected = true;
 	}
-	//TODO:figure out how to return the object to use when I call this whole selectCharacter function in the constructor for the game object in main.
-	return user;
-}
+	else
+	{
+		delete pbuildClass;
+	}
+	
+	
+}	//Outcome: sets user object equal to address of new brawler / new archer object made behind the scenes.
+
 
 

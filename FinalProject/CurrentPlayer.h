@@ -4,24 +4,13 @@
 #include <memory>
 #include <iostream>
 
-class CurrentPlayer : public Archer, public Brawler				//TODO: Make constructors in base classes to use here, incorporate movement functions and use this as main class for init
+class CurrentPlayer : public Archer, public Brawler			
 {
 private:
 	
 public:
-	CurrentPlayer() : Archer()
-	{
-
-	}
-
-	CurrentPlayer() : Brawler()
-	{
-
-	}
-
-
 	//factory function picks which opject to create and returns a ptr to new object created
-	Playable_Character* build(PlayerClassID id)
+	Playable_Character* factory(PlayerClassID id)
 	{
 		if (id == Brawl)
 		{

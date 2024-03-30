@@ -12,7 +12,7 @@ class Game
 {
 
 private: 
-
+	bool CharacterSelected = false;
 	float windowWidth = 1920;
 	float windowHeight = 1080;
 	sf::RenderWindow* window;
@@ -23,9 +23,8 @@ private:
 	void initWindow();
 
 	//Player
-	Brawler* brawler;
+	Playable_Character* user;
 
-	//Archer* archer;
 
 	//Enemy
 	//NPC_Enemy* enemy;
@@ -37,7 +36,7 @@ public:
 	void run();
 	void update();
 	void render();
-	CurrentPlayer selectCharacter(int select);
+	void selectCharacter(int select);
 
 };
 
