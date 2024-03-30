@@ -10,7 +10,7 @@ gameWorld::gameWorld()
 
 void gameWorld::setUpInitialState() 
 {
-	exitPos = sf::Vector2i(1,0);													//creates the exit positon vector with eleements
+	exitPos = sf::Vector2i(1,0);													//creates the exit positon vector with elements
 	playerPos = sf::Vector2i(gridLength - 1, gridHeight - 1);						//creates the player position, subtracts from gridlength/height by 1 for the xand y coords
 
 	setUpTiles();

@@ -2,6 +2,7 @@
 #include "gameWorld.h"
 #include "gameTile.h"
 #include "Brawler.h"
+#include "NPC_Enemy.h"
 
 
 class Game
@@ -20,6 +21,10 @@ private:
 
 	//Player
 	Brawler* brawler;
+
+	//Enemy
+	NPC_Enemy* enemy;
+
 public:
 	
 	Game();

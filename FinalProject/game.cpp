@@ -20,6 +20,7 @@ Game::~Game()
 {
 	delete this->window;
 	delete this->brawler;
+	delete this->enemy;
 }
 
 //functions
@@ -82,7 +83,9 @@ void Game::render()
 	}
 
 	//Draw player
-	this->brawler->render(*this->window);										//drawing brawler to screen
+	this->brawler->render(*this->window);	//drawing brawler to screen
+
+	this->enemy->render(*this->window);		//drawing enemy to screen
 
 	this->window->display();
 }

@@ -8,7 +8,7 @@ NPC_Enemy::NPC_Enemy()
 
 void NPC_Enemy::initTexture()
 {
-	if (!this->texture.loadFromFile("")) //upload PNG of the enemy
+	if (!this->texture.loadFromFile("enemy.png")) //upload PNG of the enemy
 	{
 		std::cout << "Texture Load Failure";
 	}

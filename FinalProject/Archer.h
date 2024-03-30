@@ -8,6 +8,7 @@ private:
 
 public:
 
+	Archer();
 	void initTexture();
 	void initSprite();
 
