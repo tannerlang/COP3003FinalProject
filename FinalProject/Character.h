@@ -32,6 +32,7 @@ protected:
 	sf::Texture texture;
 	sf::Sprite sprite;
 	
+	
 public:
 	Character();
 	virtual ~Character();

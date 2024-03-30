@@ -4,7 +4,7 @@ class Brawler : public Playable_Character
 {
 
 private:
-  
+    
 public:
     Brawler();
     void initTexture();
