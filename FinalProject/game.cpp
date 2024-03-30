@@ -118,6 +118,7 @@ CurrentPlayer Game::selectCharacter(int select)
 	{
 		pbuildClass->playableCharacterObject(Playable_Character::Brawl);
 		pbuildClass->getPlayable_Character();
+		CurrentPlayer* user = pbuildClass->getPlayable_Character();
 		 
 	}
 	if (select == 1)
@@ -125,8 +126,8 @@ CurrentPlayer Game::selectCharacter(int select)
 		pbuildClass->playableCharacterObject(Playable_Character::Arch);
 		pbuildClass->getPlayable_Character();
 	}
-
-	return pbuildClass->getPlayable_Character();
+	//TODO:figure out how to return the object to use when I call this whole selectCharacter function in the constructor for the game object in main.
+	return user;
 }
 
 

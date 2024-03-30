@@ -9,7 +9,17 @@ class CurrentPlayer : public Archer, public Brawler				//TODO: Make constructors
 private:
 	
 public:
-	
+	CurrentPlayer() : Archer()
+	{
+
+	}
+
+	CurrentPlayer() : Brawler()
+	{
+
+	}
+
+
 	//factory function picks which opject to create and returns a ptr to new object created
 	Playable_Character* build(PlayerClassID id)
 	{
