@@ -4,7 +4,7 @@
 #include <memory>
 #include <iostream>
 
-class CurrentPlayer : public Archer, public Brawler			
+class CurrentPlayer : public Brawler, public Archer
 {
 private:
 	
@@ -18,7 +18,7 @@ public:
 		}
 		else if (Arch)
 		{
-			return new Archer();							//fix is here, with pointer type.
+			return new Archer();							//fix is here, 
 		}
 		else
 		{

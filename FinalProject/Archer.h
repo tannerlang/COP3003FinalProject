@@ -1,6 +1,6 @@
 #pragma once
 #include "Playable_Character.h"
-class Archer : public Playable_Character
+class Archer : public virtual Playable_Character
 {
 private:
 	

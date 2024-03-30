@@ -105,7 +105,7 @@ void Game::render()
 
 void Game::initPlayer()			//Should an initEnemy function be made? probably
 {	
-	//this->user = new class() is set up in select character now.
+	this->user = new CurrentPlayer();
 }
 
 
@@ -138,13 +138,9 @@ void Game::selectCharacter(int select)											//Function Objective: Call in g
 
 void Game::selectCharacterWidget()
 {
+	
 	menu.MMrun();								//this works. 
-
-
-
-
-
-	int select = 0;
+	int select = menu.returnData();
 	selectCharacter(select);
 }
 

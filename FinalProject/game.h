@@ -1,8 +1,6 @@
 #pragma once
 #include "gameWorld.h"
 #include "gameTile.h"
-#include "Archer.h"
-#include "Brawler.h"
 #include "CurrentPlayer.h"
 #include "buildClass.h"
 #include "MainMenu.h"
@@ -34,7 +32,6 @@ private:
 	//NPC_Enemy* enemy;
 
 public:
-	
 	Game();
 	virtual ~Game();
 	void run();

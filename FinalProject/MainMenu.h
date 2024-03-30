@@ -32,17 +32,25 @@ public:
 		arial.loadFromFile("arial.ttf");
 		ChooseCharacter.setFont(arial);
 		ChooseCharacter.setString("Choose Your Character!");
+		ChooseCharacter.setPosition(100, 0);
 	}
 	void loadButton()
 	{
 		//Brawler Button
-		if (!BrawlerButton.loadFromFile("Brawler_SouthFace_Default_64x64.png"))	//Displays PNG for Brawler
+		if (BrawlerButton.loadFromFile("Brawler_SouthFace_Default_64x64.png"))	//Displays PNG for Brawler
 		{
-			//
+			BrawlerButtonSprite.setTexture(BrawlerButton);
+			BrawlerButtonSprite.setPosition(125, 100);
+			BrawlerButtonSprite.scale(2, 2);
 		}
-		BrawlerButtonSprite.setTexture(BrawlerButton);
-
 		//Archer Button
+		/*if ()
+		{
+			ArcherButtonSprite.setTexture(BrawlerButton);
+			ArcherButtonSprite.setPosition(375, 100);
+			ArcherButtonSprite.scale(2, 2);
+		}*/
+
 	}
 	int returnData();
 };

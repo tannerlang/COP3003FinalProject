@@ -32,29 +32,30 @@ void MainMenu::MMupdate()
 		sf::Event event;
 		while (this->MMwindow->pollEvent(event))
 		{
+			mousPos = sf::Mouse::getPosition();
 			///Exit
 			if (event.type == sf::Event::Closed)
 			{
 				this->MMwindow->close();
 			}
-			
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				mousPos = sf::Mouse::getPosition();
-				if (mousPos.x == BrawlerButtonPos.x && mousPos.y == BrawlerButtonPos.y)
+				//Brawler Button
+				if (BrawlerButtonSprite.getGlobalBounds().contains(mousPos.x, mousPos.y))				//trying to get the MMwindow to close when mouse clicks where the sprite is.
 				{
+				
 					PlayerClassID = 0;
+					this->MMwindow->close();
+				}
+				//Archer Button
+				if (true)
+				{
+					//PlayerClassID = 1;
+					//this->MMwindow->close();
 				}
 			}
-			
 		}
 		this->MMrender();
-		BrawlerButtonPos = BrawlerButtonSprite.getPosition();//the position of the button
-		
-		BrawlerButtonSize = BrawlerButtonSprite.getScale();//the size of the button
-		
-		
-		
 	}
 }
 
@@ -84,6 +85,6 @@ bool MainMenu::boolOpen()
 
 int MainMenu::returnData()
 {
-	return 0;
+	return PlayerClassID;
 }
 
