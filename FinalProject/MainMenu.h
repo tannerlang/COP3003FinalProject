@@ -41,7 +41,6 @@ public:
 		{
 			BrawlerButtonSprite.setTexture(BrawlerButton);
 			BrawlerButtonSprite.setPosition(125, 100);
-			BrawlerButtonSprite.scale(2, 2);
 		}
 		//Archer Button
 		/*if ()

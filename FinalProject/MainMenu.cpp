@@ -41,7 +41,7 @@ void MainMenu::MMupdate()
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
 				//Brawler Button
-				if (BrawlerButtonSprite.getGlobalBounds().contains(mousPos.x, mousPos.y))				//trying to get the MMwindow to close when mouse clicks where the sprite is.
+				if (mousPos.x >= 125 && mousPos.x <= 189 && mousPos.y >= 100 && mousPos.y <= 164)				//trying to get the MMwindow to close when mouse clicks where the sprite is.
 				{
 				
 					PlayerClassID = 0;
