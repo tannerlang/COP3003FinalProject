@@ -13,9 +13,10 @@ void Game::initWindow()
 Game::Game()
 {
 	user = nullptr;
+	//this->selectCharacterWidget();
 	this->initWindow();
 	this->initPlayer();
-	//this->selectCharacter();
+	
 	
 }
 
@@ -128,5 +129,11 @@ void Game::selectCharacter(int select)											//Function Objective: Call in g
 	
 }	//Outcome: sets user object equal to address of new brawler / new archer object made behind the scenes.
 
+void Game::selectCharacterWidget()
+{
+	int select = 0;
 
+
+	selectCharacter(select);
+}
 

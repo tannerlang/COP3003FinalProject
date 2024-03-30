@@ -37,6 +37,7 @@ public:
 	void update();
 	void render();
 	void selectCharacter(int select);
+	void selectCharacterWidget();
 
 };
 
