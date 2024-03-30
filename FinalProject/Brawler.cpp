@@ -2,7 +2,7 @@
 
 Brawler::Brawler()
 {
-	this->initTexture();	//Calls on the pointers  
+	this->initTexture();	//Calls on the pointers which will be holding the PNG
 	this->initSprite();
 };
 

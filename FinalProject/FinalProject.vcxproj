@@ -142,6 +142,7 @@
     <ClCompile Include="Archer.cpp" />
     <ClCompile Include="Brawler.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CurrentPlayer.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameTile.cpp" />
     <ClCompile Include="main.cpp" />
@@ -158,12 +159,15 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
     </Image>
+    <Image Include="Archer.png" />
     <Image Include="Brawler_SouthFace_Default_64x64.png" />
+    <Image Include="NPC_Enemy.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Archer.h" />
     <ClInclude Include="Brawler.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="CurrentPlayer.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameTile.h" />
     <ClInclude Include="gameWorld.h" />

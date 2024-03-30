@@ -2,6 +2,7 @@
 #include "gameWorld.h"
 #include "gameTile.h"
 #include "Brawler.h"
+#include "Archer.h"
 #include "NPC_Enemy.h"
 
 
@@ -21,6 +22,8 @@ private:
 
 	//Player
 	Brawler* brawler;
+
+	Archer* archer;
 
 	//Enemy
 	NPC_Enemy* enemy;

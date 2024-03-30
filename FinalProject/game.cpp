@@ -14,6 +14,7 @@ Game::Game()
 {
 	this->initWindow();
 	this->initPlayer();
+	
 }
 
 Game::~Game()
@@ -85,15 +86,21 @@ void Game::render()
 	//Draw player
 	this->brawler->render(*this->window);	//drawing brawler to screen
 
+	//this->archer->render(*this->window);	//drawing archer to screen
+
 	this->enemy->render(*this->window);		//drawing enemy to screen
 
 	this->window->display();
 }
 
-void Game::initPlayer()
+void Game::initPlayer()			//Should an initEnemy function be made?
 {	//if character is brawler
-	this->brawler = new Brawler();
 
+	this->brawler = new Brawler();		//Would this be replaced with CurrentPlayer? 
 
 	//if character is archer
+
+	this->archer = new Archer();
+
 }
+

@@ -42,6 +42,9 @@
     <ClCompile Include="Archer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CurrentPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\Pictures\Programming 1\enemy.png">
@@ -54,6 +57,12 @@
       <Filter>images</Filter>
     </Image>
     <Image Include="..\..\..\..\..\Desktop\gametiles\plains.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="NPC_Enemy.png">
+      <Filter>images</Filter>
+    </Image>
+    <Image Include="Archer.png">
       <Filter>images</Filter>
     </Image>
   </ItemGroup>
@@ -83,6 +92,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Archer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentPlayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

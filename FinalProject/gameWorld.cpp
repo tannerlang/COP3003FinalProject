@@ -4,7 +4,7 @@ gameWorld::gameWorld()
 {
 	gridLength = 31;
 	gridHeight = 17 ;                       //what does this do, should it be bigger since we scaled the window up?
-	this->setUpInitialState();
+	this->setUpInitialState();				//Area for character to move around?
 }
 
 

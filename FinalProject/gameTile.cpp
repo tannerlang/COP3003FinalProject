@@ -6,14 +6,14 @@ gameTile::gameTile(std::string textureName, float x, float y, bool passable, boo
 		return;
 	}
 	pos = sf::Vector2f(x, y);					//creates a 2d vector called pos, x and y are passed from gameWorld forloop which is where the next tile will be
-	sprite.setPosition(pos);					//sets the position of the sprite to position of pos(passed variable from tile vector in forloop)
+	sprite.setPosition(pos);					//sets the position of the sprite to position of pos (passed variable from tile vector in forloop)
 
-	isPassable = passable;
-	isExit = exit;
+	isPassable = passable;						//Allows sprite to walk over tile
+	isExit = exit;								//Creates an exit point 
 }
 
 
-bool gameTile::setUpSprite(std::string textureName) {
+bool gameTile::setUpSprite(std::string textureName) {							//Produces error code if PNG doesn't load
 	if (!texture.loadFromFile(textureName)) {							
 		return false;
 	}

@@ -8,7 +8,7 @@ Archer::Archer()
 
 void Archer::initTexture()	//Inputting information into pointers
 {
-	if (!this->archerTexture.loadFromFile("Archer.png")) //Displays PNG for archer sprite													 
+	if (!this->texture.loadFromFile("Archer.png")) //Displays PNG for archer sprite													 
 	{
 		std::cout << "Texture Load Failure"; //Displays error in case there is some issue
 	}
@@ -16,5 +16,5 @@ void Archer::initTexture()	//Inputting information into pointers
 
 void Archer::initSprite()
 {
-	this->archerSprite.setTexture(this->archerTexture);	//set texture to sprite
+	this->sprite.setTexture(this->texture);	//set texture to sprite
 }
