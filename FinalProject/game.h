@@ -23,10 +23,10 @@ private:
 	//Player
 	Brawler* brawler;
 
-	Archer* archer;
+	//Archer* archer;
 
 	//Enemy
-	NPC_Enemy* enemy;
+	//NPC_Enemy* enemy;
 
 public:
 	

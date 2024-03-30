@@ -1,6 +1,6 @@
 #include "CurrentPlayer.h"
 
-CurrentPlayer::CurrentPlayer()
+CurrentPlayer::CurrentPlayer(const std::string PlayerClass)
 {
 
 }

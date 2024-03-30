@@ -21,7 +21,7 @@ Game::~Game()
 {
 	delete this->window;
 	delete this->brawler;
-	delete this->enemy;
+	//delete this->enemy;
 }
 
 //functions
@@ -88,7 +88,7 @@ void Game::render()
 
 	//this->archer->render(*this->window);	//drawing archer to screen
 
-	this->enemy->render(*this->window);		//drawing enemy to screen
+	//this->enemy->render(*this->window);		//drawing enemy to screen
 
 	this->window->display();
 }
@@ -96,11 +96,12 @@ void Game::render()
 void Game::initPlayer()			//Should an initEnemy function be made?
 {	//if character is brawler
 
-	this->brawler = new Brawler();		//Would this be replaced with CurrentPlayer? 
+	this->brawler = new Brawler();		/*In the future, current player will be the only player object in game.cpp CurrentPlayer
+										will handle deciding what character object is chosen*/
 
 	//if character is archer
 
-	this->archer = new Archer();
+	//this->archer = new Archer();
 
 }
 
