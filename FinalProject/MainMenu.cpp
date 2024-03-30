@@ -1,7 +1,7 @@
 #include "MainMenu.h"
 MainMenu::MainMenu()
 {
-	this->loadFont();
+	this->loadText();
 	this->MMinitWindow();
 }
 
@@ -44,11 +44,11 @@ void MainMenu::MMupdate()
 void MainMenu::MMrender()
 {
 	this->MMwindow->clear();
-
+	
 	
 	//drawing stuff here
-	this->MMwindow->draw(Text);
-
+	
+	this->MMwindow->draw(ChooseCharacter);
 	this->MMwindow->display();
 }
 
@@ -62,4 +62,9 @@ bool MainMenu::boolOpen()
 	{
 		return false;
 	}
+}
+
+int MainMenu::returnData()
+{
+
 }

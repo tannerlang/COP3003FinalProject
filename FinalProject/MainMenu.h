@@ -11,6 +11,8 @@ private:
 	
 
 public:
+	sf::Text ChooseCharacter;
+	sf::Font arial;
 	MainMenu();
 	virtual ~MainMenu();
 	void MMrun();
@@ -20,7 +22,9 @@ public:
 	void loadText()
 	{
 		
-		
+		arial.loadFromFile("arial.ttf");
+		ChooseCharacter.setFont(arial);
+		ChooseCharacter.setString("Choose Your Character!");
 	}
 };
 
