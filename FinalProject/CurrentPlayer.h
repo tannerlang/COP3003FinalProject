@@ -1,12 +1,39 @@
 #pragma once
 #include "Brawler.h"
 #include "Archer.h"
-class CurrentPlayer :	public Brawler, public Archer				//TODO: Make constructors in base classes to use here, incorporate movement functions and use this as main class for init
-{
+#include <memory>
+#include <iostream>
 
+class CurrentPlayer : public Archer, public Brawler				//TODO: Make constructors in base classes to use here, incorporate movement functions and use this as main class for init
+{
+private:
+	
 public:
-	CurrentPlayer(const std::string PlayerClass);			//How can we determine which character to choose? Maybe a boolean brawler(0) and archer (1)
-																//when creating object make do it with constructor called to be able to choose what you pass to decide which class you are playing
+	
+	//factory function picks which opject to create and returns a ptr to new object created
+	Playable_Character* build(PlayerClassID id)
+	{
+		if (id == Brawl)
+		{
+			return new Brawler();
+		}
+		else if (Arch)
+		{
+			return new Archer();
+		}
+		else
+		{
+			return nullptr;
+		}
+	}
+
+	virtual ~CurrentPlayer() = default;
+
+
+
+								//need to build a "factory" to build
+								//A factory is a function that takes a set of arguments indicating what to build, and returns an instance of what needed building.
+								//https://www.wikiwand.com/en/Factory_method_pattern
 
 };
 

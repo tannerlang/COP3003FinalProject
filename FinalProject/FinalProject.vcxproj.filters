@@ -45,6 +45,9 @@
     <ClCompile Include="CurrentPlayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="buildClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\Pictures\Programming 1\enemy.png">
@@ -95,6 +98,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CurrentPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="buildClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

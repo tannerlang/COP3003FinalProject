@@ -14,6 +14,7 @@ Game::Game()
 {
 	this->initWindow();
 	this->initPlayer();
+	//this->selectCharacter();
 	
 }
 
@@ -104,4 +105,28 @@ void Game::initPlayer()			//Should an initEnemy function be made?
 	//this->archer = new Archer();
 
 }
+
+
+//function to select player call in game() constructor or in initwindow()
+//call to open a window to select
+CurrentPlayer Game::selectCharacter(int select)
+{
+	//link this select argument with a widget to select character.
+	buildClass* pbuildClass = new buildClass();
+	
+	if (select == 0)
+	{
+		pbuildClass->playableCharacterObject(Playable_Character::Brawl);
+		pbuildClass->getPlayable_Character();
+		 
+	}
+	if (select == 1)
+	{
+		pbuildClass->playableCharacterObject(Playable_Character::Arch);
+		pbuildClass->getPlayable_Character();
+	}
+
+	return pbuildClass->getPlayable_Character();
+}
+
 

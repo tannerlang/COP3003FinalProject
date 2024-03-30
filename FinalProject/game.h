@@ -1,9 +1,11 @@
 #pragma once
 #include "gameWorld.h"
 #include "gameTile.h"
-#include "Brawler.h"
 #include "Archer.h"
-#include "NPC_Enemy.h"
+#include "Brawler.h"
+#include "CurrentPlayer.h"
+#include "buildClass.h"
+#include <iostream>
 
 
 class Game
@@ -35,6 +37,7 @@ public:
 	void run();
 	void update();
 	void render();
+	CurrentPlayer selectCharacter(int select);
 
 };
 
