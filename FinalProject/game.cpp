@@ -113,7 +113,7 @@ void Game::selectCharacter(int select)											//Function Objective: Call in g
 {
 	
 	//link this 'select' argument with a widget to select character.
-	//TODO:Tweak the pointers in this function to fix the crashing. 
+	//TODO:Tweak the pointers in this function to fix the crashing.!!!!
 	buildClass* pbuildClass = new buildClass();									//creates pointer to buldClass called pbuildClass and initializes it.
 	
 	if (select == 0)

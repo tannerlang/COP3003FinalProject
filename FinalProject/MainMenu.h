@@ -26,5 +26,6 @@ public:
 		ChooseCharacter.setFont(arial);
 		ChooseCharacter.setString("Choose Your Character!");
 	}
+	int returnData();
 };
 
