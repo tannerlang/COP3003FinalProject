@@ -2,6 +2,7 @@
 MainMenu::MainMenu()
 {
 	this->loadText();
+	this->loadButton();
 	this->MMinitWindow();
 }
 
@@ -36,8 +37,24 @@ void MainMenu::MMupdate()
 			{
 				this->MMwindow->close();
 			}
+			
+			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+			{
+				mousPos = sf::Mouse::getPosition();
+				if (mousPos.x == BrawlerButtonPos.x && mousPos.y == BrawlerButtonPos.y)
+				{
+					PlayerClassID = 0;
+				}
+			}
+			
 		}
 		this->MMrender();
+		BrawlerButtonPos = BrawlerButtonSprite.getPosition();//the position of the button
+		
+		BrawlerButtonSize = BrawlerButtonSprite.getScale();//the size of the button
+		
+		
+		
 	}
 }
 
@@ -49,6 +66,7 @@ void MainMenu::MMrender()
 	//drawing stuff here
 	
 	this->MMwindow->draw(ChooseCharacter);
+	this->MMwindow->draw(BrawlerButtonSprite);
 	this->MMwindow->display();
 }
 
@@ -69,69 +87,3 @@ int MainMenu::returnData()
 	return 0;
 }
 
-
-
-//---------------Brawler Button-----------------
-/*
-class BrawlerButton 
-{
-private:
-	sf::Sprite normal;
-	sf::Sprite clicked;
-	sf::Sprite* currentSpr;
-	sf::String String;
-	bool current;
-public:
-	BrawlerButton(sf::Image* normal, sf::Image* clicked, std::string, sf::Vector2f location)
-	{
-		(sf::Image * normal, sf::Image * clicked, std::string words, sf::Vector2f location) ;
-	{
-		this->normal.SetImage(*normal);
-		this->clicked.SetImage(*clicked);
-		this->currentSpr = &this->normal;
-		current = false;
-		this->normal.SetPosition(location);
-		this->clicked.SetPosition(location);
-		String.SetText(words);
-		String.SetPosition(location.x + 3, location.y + 3);
-		String.SetSize(14);
-	}
-	}
-	void checkClick(sf::Vector2f)
-	{
-		if (mousePos.x > currentSpr->GetPosition().x && mousePos.x < (currentSpr->GetPosition().x + currentSpr->GetSize().x)) {
-			if (mousePos.y > currentSpr->GetPosition().y && mousePos.y < (currentSpr->GetPosition().y + currentSpr->GetSize().y)) {
-				setState(!current);
-			}
-		}
-	}
-}
-	void setState(bool)
-	{
-		current = which;
-		if (current) {
-			currentSpr = &clicked;
-			return;
-		}
-		currentSpr = &normal;
-	}
-	void setText(std::string)
-	{
-		String.SetText(words);
-	}
-
-	bool getVar()
-	{
-		return current;
-	}
-
-	sf::Sprite* getSprite()
-	{
-		return currentSpr;
-	}
-	sf::String* getText()
-	{
-		return &String;
-	}
-};
-*/

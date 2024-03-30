@@ -18,7 +18,7 @@ public:
 		}
 		else if (Arch)
 		{
-			return new Archer();
+			return new Archer();							//fix is here, with pointer type.
 		}
 		else
 		{
@@ -32,7 +32,6 @@ public:
 
 								//need to build a "factory" to build
 								//A factory is a function that takes a set of arguments indicating what to build, and returns an instance of what needed building.
-								//https://www.wikiwand.com/en/Factory_method_pattern
-
+								//https://www.geeksforgeeks.org/factory-method-for-designing-pattern/
 };
 
