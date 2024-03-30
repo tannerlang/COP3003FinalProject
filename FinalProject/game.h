@@ -5,6 +5,7 @@
 #include "Brawler.h"
 #include "CurrentPlayer.h"
 #include "buildClass.h"
+#include "MainMenu.h"
 #include <iostream>
 
 
@@ -21,6 +22,9 @@ private:
 	//Private Functions
 	void initPlayer();
 	void initWindow();
+	
+	//Main Menu
+	MainMenu menu;
 
 	//Player
 	Playable_Character* user;

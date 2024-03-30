@@ -12,8 +12,9 @@ void Game::initWindow()
 
 Game::Game()
 {
+	
 	user = nullptr;
-	//this->selectCharacterWidget();
+	this->selectCharacterWidget();
 	this->initWindow();
 	this->initPlayer();
 	
@@ -39,36 +40,40 @@ void Game::run()
 //function to handle data updates each frame
 void Game::update()
 {
-	while (this->window->isOpen())
+	while (!menu.boolOpen())
 	{
-		sf::Event event;
-		while (this->window->pollEvent(event))
+
+		while (this->window->isOpen())
 		{
-			///Exit
-			if (event.type == sf::Event::Closed)
+			sf::Event event;
+			while (this->window->pollEvent(event))
 			{
-				this->window->close();
+				///Exit
+				if (event.type == sf::Event::Closed)
+				{
+					this->window->close();
+				}
 			}
+			this->render();
+			//Move player
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+			{
+				this->user->moveCharacter(-1.f, 0.f);
+			}
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+			{
+				this->user->moveCharacter(1.f, 0.f);
+			}
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+			{
+				this->user->moveCharacter(0.f, -1.f);
+			}
+			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+			{
+				this->user->moveCharacter(0.f, 1.f);
+			}
+			//TODO: add controller support
 		}
-		this->render();
-		//Move player
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		{
-			this->user->moveCharacter(-1.f, 0.f);
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		{
-			this->user->moveCharacter(1.f, 0.f);
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		{
-			this->user->moveCharacter(0.f, -1.f);
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		{
-			this->user->moveCharacter(0.f, 1.f);
-		}
-		//TODO: add controller support
 	}
 }
 
@@ -133,9 +138,14 @@ void Game::selectCharacter(int select)											//Function Objective: Call in g
 
 void Game::selectCharacterWidget()
 {
+	this->menu = MainMenu();
+	menu.MMrun();
+
+
+
+
+
 	int select = 0;
-
-
 	selectCharacter(select);
 }
 
