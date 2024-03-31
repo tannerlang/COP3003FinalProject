@@ -92,7 +92,7 @@ void Game::render()
 	}
 
 	
-	if (CharacterSelected)					//this currently draw screen white (since bool is false) game doesnt crash anymore. Will draw screen when character is selected.
+	if (CharacterSelected)					//still can't select character. Also sprite is not appearing in the world
 	{
 		//Draw Player
 		this->user->render(*this->window);
@@ -103,10 +103,16 @@ void Game::render()
 	
 }
 
-void Game::initPlayer()			//Should an initEnemy function be made? probably
+void Game::initPlayer()			
 {	
 	this->user = new CurrentPlayer();
 }
+
+/*void Game::initEnemy()
+{
+	this-> = new CurrentEnemy();
+}
+*/
 
 
 void Game::selectCharacter(int select)											//Function Objective: Call in game() to select character, 
@@ -114,7 +120,7 @@ void Game::selectCharacter(int select)											//Function Objective: Call in g
 	
 	//link this 'select' argument with a widget to select character.
 	//TODO:Tweak the pointers in this function to fix the crashing.!!!!
-	buildClass* pbuildClass = new buildClass();									//creates pointer to buldClass called pbuildClass and initializes it.
+	buildClass* pbuildClass = new buildClass();									//creates pointer to buildClass called pbuildClass and initializes it.
 	
 	if (select == 0)
 	{

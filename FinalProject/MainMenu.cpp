@@ -2,6 +2,7 @@
 MainMenu::MainMenu()
 {
 	this->loadText();
+	this->rect();
 	this->loadButton();
 	this->MMinitWindow();
 }
@@ -68,6 +69,7 @@ void MainMenu::MMrender()
 	
 	this->MMwindow->draw(ChooseCharacter);
 	this->MMwindow->draw(BrawlerButtonSprite);
+	this->MMwindow->draw(rectangle);				//This may be lingering issue with drawing rectangle
 	this->MMwindow->display();
 }
 

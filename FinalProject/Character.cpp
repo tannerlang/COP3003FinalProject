@@ -36,7 +36,7 @@ void Character::update()
 
 void Character::render(sf::RenderTarget& target)
 {
-	target.draw(this->sprite);	//This keeps giving a weird error code
+	target.draw(this->sprite);	
 }
 
 

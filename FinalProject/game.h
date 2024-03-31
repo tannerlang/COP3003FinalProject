@@ -11,7 +11,7 @@ class Game
 {
 
 private: 
-	bool CharacterSelected = false;
+	bool CharacterSelected = false;  
 	float windowWidth = 1920;
 	float windowHeight = 1080;
 	sf::RenderWindow* window;
