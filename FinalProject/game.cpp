@@ -115,7 +115,7 @@ void Game::initPlayer()
 */
 
 
-void Game::selectCharacter(int select)											//Function Objective: Call in game() to select character, 
+void Game::selectCharacter(int &select)											//Function Objective: Call in game() to select character, 
 {
 	
 	//link this 'select' argument with a widget to select character.

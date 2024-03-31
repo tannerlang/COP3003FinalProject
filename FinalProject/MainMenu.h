@@ -52,7 +52,7 @@ public:
 	{
 		
 		//Brawler Button
-		if (BrawlerButton.loadFromFile("Brawler.png"))	//Displays PNG for Brawler
+		if (BrawlerButton.loadFromFile("brawler.png"))	//Displays PNG for Brawler
 		{
 			BrawlerButtonSprite.setTexture(BrawlerButton);
 			BrawlerButtonSprite.setPosition(100, 200);
