@@ -1,5 +1,6 @@
 #pragma once
 #include<memory>
+#include"Playable_Character.h"
 #include<SFML/Graphics.hpp>
 class MainMenu 
 {
@@ -14,9 +15,7 @@ private:
 	sf::Sprite ArcherButtonSprite;
 	
 public:
-	
 	int PlayerClassID;
-
 	sf::RectangleShape brawl_rect;
 	sf::RectangleShape arch_rect;
 	sf::Text ChooseCharacter;
@@ -53,7 +52,7 @@ public:
 	{
 		
 		//Brawler Button
-		if (BrawlerButton.loadFromFile("brawler.png"))	//Displays PNG for Brawler
+		if (BrawlerButton.loadFromFile("Brawler.png"))	//Displays PNG for Brawler
 		{
 			BrawlerButtonSprite.setTexture(BrawlerButton);
 			BrawlerButtonSprite.setPosition(100, 200);
