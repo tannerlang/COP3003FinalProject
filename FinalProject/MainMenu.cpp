@@ -35,8 +35,8 @@ void MainMenu::MMupdate()
 		sf::Event event;
 		while (this->MMwindow->pollEvent(event))
 		{
-			sf::Vector2i pixPos = sf::Mouse::getPosition(*MMwindow);
-			sf::Vector2f worldPos = MMwindow->mapPixelToCoords(pixPos);
+			sf::Vector2i pixPos = sf::Mouse::getPosition(*MMwindow);			//Creating a vector to hold cooridinates of mouse within window
+			sf::Vector2f worldPos = MMwindow->mapPixelToCoords(pixPos);			//Places cooridinates in previous vector
 			
 			
 
@@ -57,7 +57,7 @@ void MainMenu::MMupdate()
 				//Archer Button													
 				if (ArcherButtonSprite.getGlobalBounds().contains(sf::Vector2f(worldPos.x, worldPos.y)))
 				{
-					PlayerClassID = 1;
+					PlayerClassID = 1;							//Only archer displays currently 
 					this->MMwindow->close();
 				}
 

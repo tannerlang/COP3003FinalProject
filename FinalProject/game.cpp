@@ -128,7 +128,7 @@ void Game::selectCharacter(int select)											//Function Objective: Call in g
 		user = pbuildClass->getPlayable_Character();							//sets user(pointer to playable character object) equal to the object that the factory built
 		CharacterSelected = true;
 	}
-	if (select == 1)
+	else if (select == 1)
 	{
 		pbuildClass->playableCharacterObjectBuilder(Playable_Character::Arch);			
 		user = pbuildClass->getPlayable_Character();			
