@@ -17,7 +17,7 @@ public:
 	
 	int PlayerClassID;
 
-	sf::RectangleShape rectangle;
+	sf::RectangleShape rectangle;		
 
 	sf::Text ChooseCharacter;
 	sf::Font arial;
@@ -60,7 +60,7 @@ public:
 		{
 			ArcherButtonSprite.setTexture(BrawlerButton);
 			ArcherButtonSprite.setPosition(375, 100);
-			ArcherButtonSprite.scale(2, 2);
+			
 		}*/
 
 	}

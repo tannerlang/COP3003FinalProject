@@ -32,8 +32,9 @@ void MainMenu::MMupdate()
 	{
 		sf::Event event;
 		while (this->MMwindow->pollEvent(event))
-		{
-			mousPos = sf::Mouse::getPosition();
+		{															
+			mousPos = sf::Mouse::getPosition();						//This might have some insight on the issue
+																	//https://stackoverflow.com/questions/10962270/mouse-position-and-click-detect-in-sfml
 			///Exit
 			if (event.type == sf::Event::Closed)
 			{
@@ -41,9 +42,9 @@ void MainMenu::MMupdate()
 			}
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 			{
-				//Brawler Button
-				if (mousPos.x >= 125 && mousPos.x <= 189 && mousPos.y >= 100 && mousPos.y <= 164)				//trying to get the MMwindow to close when mouse clicks where the sprite is.
-				{
+				//Brawler Button													
+				if (mousPos.x = BrawlerButtonSprite.getPosition().x /* && mousPos.y == BrawlerButtonSprite.getPosition().y*/)				//Temp solution. Able to click anywhere on screen to initiate game. 
+				{																															//Blocked code was an attempt to cooridinate the postion for click but seems to be an issue with comparing vect float to vect int
 				
 					PlayerClassID = 0;
 					this->MMwindow->close();
