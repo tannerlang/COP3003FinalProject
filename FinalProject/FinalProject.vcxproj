@@ -162,7 +162,7 @@
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
     </Image>
     <Image Include="Archer.png" />
-    <Image Include="Brawler_SouthFace_Default_64x64.png" />
+    <Image Include="Brawler.png" />
     <Image Include="NPC_Enemy.png" />
   </ItemGroup>
   <ItemGroup>

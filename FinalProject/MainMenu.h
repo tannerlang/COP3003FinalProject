@@ -17,11 +17,10 @@ public:
 	
 	int PlayerClassID;
 
-	sf::RectangleShape rectangle;		
-
+	sf::RectangleShape brawl_rect;
+	sf::RectangleShape arch_rect;
 	sf::Text ChooseCharacter;
 	sf::Font arial;
-	sf::Vector2i mousPos;
 	sf::Vector2f BrawlerButtonPos;
 	sf::Vector2f BrawlerButtonSize;
 	MainMenu();
@@ -40,28 +39,31 @@ public:
 
 	void rect()
 	{
-		//Square
-		sf::RectangleShape rectangle(sf::Vector2f(64, 64));			//Idea is to potentially make a rectangle act as the button, this way you can see the full available selection space
-		rectangle.setPosition(100, 50);								//Cannot get rectangle to appear on main menu screen. 
-																	//TODO: Get rectangle on screen and attach functions which would be similar to Brawler/Archer
+		//Brawler background
+		sf::RectangleShape brawl_rect(sf::Vector2f(64, 64));										
+		brawl_rect.setPosition(100, 100);
+		
+		
+		//Archer background																			//Cannot get rectangle to appear on main menu screen. 
+		sf::RectangleShape arch_rect(sf::Vector2f(64, 64));											//Use rectangle as background for sprite
+		arch_rect.setPosition(375, 100);															//TODO: Get rectangle on screen and attach functions which would be similar to Brawler/Archer
 	}
 
 	void loadButton()
 	{
 		
 		//Brawler Button
-		if (BrawlerButton.loadFromFile("Brawler_SouthFace_Default_64x64.png"))	//Displays PNG for Brawler
+		if (BrawlerButton.loadFromFile("brawler.png"))	//Displays PNG for Brawler
 		{
 			BrawlerButtonSprite.setTexture(BrawlerButton);
-			BrawlerButtonSprite.setPosition(125, 100);
+			BrawlerButtonSprite.setPosition(100, 200);
 		}
 		//Archer Button
-		/*if ()
+		if (ArcherButton.loadFromFile("Archer.png"))
 		{
-			ArcherButtonSprite.setTexture(BrawlerButton);
-			ArcherButtonSprite.setPosition(375, 100);
-			
-		}*/
+			ArcherButtonSprite.setTexture(ArcherButton);
+			ArcherButtonSprite.setPosition(300, 200);
+		}
 
 	}
 	int returnData();

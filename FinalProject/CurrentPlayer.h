@@ -16,7 +16,7 @@ public:
 		{
 			return new Brawler();
 		}
-		else if (Arch)
+		else if (id == Arch)
 		{
 			return new Archer();							//fix is here, 
 		}

@@ -92,7 +92,7 @@ void Game::render()
 	}
 
 	
-	if (CharacterSelected)					//still can't select character. Also sprite is not appearing in the world
+	if (CharacterSelected)					
 	{
 		//Draw Player
 		this->user->render(*this->window);

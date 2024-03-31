@@ -8,7 +8,7 @@ Brawler::Brawler()
 
 void Brawler::initTexture()	//Inputting information to pointer
 {
-	if (!this->texture.loadFromFile("Brawler_SouthFace_Default_64x64.png"))	//Displays PNG for Brawler
+	if (!this->texture.loadFromFile("Brawler.png"))	//Displays PNG for Brawler
 	{
 		std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
 	}

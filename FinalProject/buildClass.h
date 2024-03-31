@@ -15,7 +15,7 @@ public:
 
 	void playableCharacterObjectBuilder(PlayerClassID id)				//Function Objective: Use a currentplayer object to build a archer/brawler object using factory function in CurrentPlayer
 	{
-		CurrentPlayer* cp = new CurrentPlayer();						//creates pointer object to Currentplayer called cp	//keep in mind pointer type when troubleshooting main proble
+		CurrentPlayer* cp = new CurrentPlayer();						//creates pointer object to Currentplayer called cp	//keep in mind pointer type when troubleshooting main problem
 		pCharacter = cp->factory(id);									//pCharacter now points to object that the factory builds
 		delete cp;														//deletes current to CurrentPlayer
 	}
