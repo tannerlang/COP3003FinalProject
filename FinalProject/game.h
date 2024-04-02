@@ -18,7 +18,7 @@ private:
 	gameWorld gameWorld1 = gameWorld();	
 
 	//Private Functions
-	void initPlayer();
+	void initPlayer(int select);
 	void initWindow();
 	
 	//Main Menu
@@ -37,7 +37,7 @@ public:
 	void run();
 	void update();
 	void render();
-	void selectCharacter(int &select);
+	void selectCharacter(int select);
 	void selectCharacterWidget();
 
 };

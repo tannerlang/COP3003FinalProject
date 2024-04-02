@@ -18,3 +18,11 @@ void Archer::initSprite()
 {
 	this->sprite.setTexture(this->texture);	//set texture to sprite
 }
+
+void Archer::initText()
+{
+	arial.loadFromFile("arial.ttf");
+	CharacterName.setFont(arial);
+	CharacterName.setString("Archer");
+	CharacterName.setPosition(0, 0);
+}

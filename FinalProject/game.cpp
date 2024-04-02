@@ -13,10 +13,9 @@ void Game::initWindow()
 Game::Game()
 {
 	
-	user = nullptr;
+	
 	this->selectCharacterWidget();
 	this->initWindow();
-	this->initPlayer();
 	
 	
 }
@@ -103,9 +102,19 @@ void Game::render()
 	
 }
 
-void Game::initPlayer()			
+void Game::initPlayer(int select)			
 {	
 	this->user = new CurrentPlayer();
+	switch (select)
+	{
+	case 0:
+		this->user = new Brawler();
+		break;
+	case 1:
+		this->user = new Archer();
+	default:
+		break;
+	}
 }
 
 /*void Game::initEnemy()
@@ -115,29 +124,29 @@ void Game::initPlayer()
 */
 
 
-void Game::selectCharacter(int &select)											//Function Objective: Call in game() to select character, 
+void Game::selectCharacter(int select)											//Function Objective: Call in game() to select character, 
 {
 	
 	buildClass* pbuildClass = new buildClass();									//creates pointer to buildClass called pbuildClass and initializes it.
-	
-	if (select == 0)
+	switch (select)
 	{
+	case 0:
 		pbuildClass->playableCharacterObjectBuilder(Playable_Character::Brawl);	//using pointer, call object builder an pass "code" which tells factory what object to build.			
 		user = pbuildClass->getPlayable_Character();							//sets user(pointer to playable character object) equal to the object that the factory built
 		CharacterSelected = true;
-	}
-	else if (select == 1)
-	{
-		pbuildClass->playableCharacterObjectBuilder(Playable_Character::Arch);			
-		user = pbuildClass->getPlayable_Character();			
-		CharacterSelected = true;
-	}
-	else
-	{
 		delete pbuildClass;
+		break;
+	case 1:
+		pbuildClass->playableCharacterObjectBuilder(Playable_Character::Arch);
+		user = pbuildClass->getPlayable_Character();
+		CharacterSelected = true;
+		delete pbuildClass;
+		break;
+	default:
+		delete pbuildClass;
+		break;
 	}
-	
-	
+	initPlayer(select);
 }	//Outcome: sets user object equal to address of new brawler / new archer object made behind the scenes.
 
 void Game::selectCharacterWidget()

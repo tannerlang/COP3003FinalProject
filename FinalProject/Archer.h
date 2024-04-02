@@ -9,6 +9,6 @@ public:
 	Archer();
 	void initTexture();
 	void initSprite();
-
+	void initText();
 };
 

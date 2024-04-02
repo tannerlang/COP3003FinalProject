@@ -4,6 +4,7 @@ Brawler::Brawler()
 {
 	this->initTexture();	//Calls on the pointers which will be holding the PNG
 	this->initSprite();
+	this->initText();		//text for debugging
 };
 
 void Brawler::initTexture()	//Inputting information to pointer
@@ -17,5 +18,13 @@ void Brawler::initTexture()	//Inputting information to pointer
 void Brawler::initSprite()	
 {
 	this->sprite.setTexture(this->texture);	//set texture to sprite
+}
+
+void Brawler::initText()
+{
+	arial.loadFromFile("arial.ttf");
+	CharacterName.setFont(arial);
+	CharacterName.setString("Brawler");
+	CharacterName.setPosition(0, 0);
 }
 

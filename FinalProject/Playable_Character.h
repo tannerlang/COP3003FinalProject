@@ -5,7 +5,8 @@ class Playable_Character : public Character
 private:
 
 public:
-	
+	sf::Text CharacterName;
+	sf::Font arial;
 	Playable_Character();
 	
 	void moveCharacter(const int dirX,const int dirY);
