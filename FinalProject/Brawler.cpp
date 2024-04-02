@@ -28,3 +28,5 @@ void Brawler::initText()
 	CharacterName.setPosition(0, 0);
 }
 
+//a way to do the alternating sprate pngs for animations: access the moving member function via brawler, make a while loop while walking, and in the while loop create a function
+//or algorithm to switches the images and detects direction of last input to display static frames as well.
