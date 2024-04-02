@@ -102,9 +102,9 @@ void Game::render()
 	
 }
 
-void Game::initPlayer(int select)			
+void Game::initPlayer(int select)					//using the same select variable that we get from main menu when selecting the object
 {	
-	this->user = new CurrentPlayer();
+	
 	switch (select)
 	{
 	case 0:
