@@ -3,10 +3,11 @@
 #include "gameTile.h"
 #include "Brawler.h"
 #include "game.h"
+#include <time.h>
 int main()
 {
 	//Init srand
-	std::srand(static_cast<unsigned>(time(NULL)));
+	std::srand(time(NULL));
 
 	Game PlayGame;
 	PlayGame.run();

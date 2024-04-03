@@ -2,19 +2,7 @@
 
 
 //private functions
-void Game::initVariables()
-{
-	this->window = nullptr;
 
-
-	//Game logic
-	this->points = 0;
-	this->enemySpawnTimer = 0.f;
-	this->enemySpawnTimerMax = this->enemySpawnTimer;
-	this->maxEnemies = 5;
-
-
-}
 void Game::initWindow()
 {
 	this->window = new sf::RenderWindow(sf::VideoMode(windowWidth, windowHeight), "Final Project");
@@ -35,7 +23,12 @@ Game::~Game()
 {
 	delete this->window;
 	delete this->user;
-	//delete this->enemy;
+
+	//Deleting enemies to conserve memory
+	for (auto* i : this->enemies)
+	{
+		delete i;
+	}
 }
 
 //functions
@@ -43,43 +36,26 @@ void Game::run()
 {
 	while (this->window->isOpen())
 	{
-		this->update();									
+		this->update();
+
 	}
 }
 
-//function to handle enemy updates each frame
 void Game::updateEnemies()
 {
-	/*
-		Updates the enemy spawn timer and spawns enemies
-		when the total amount of enemies is smaller than the max
-		Moves the enemies downwards.
-		Removes the enemies at the edge of the screen. //TODO
-	*/
-
-	//Updating timer for enemy spawning
-	if (this->enemies.size() < this->maxEnemies)
+	//Spawning enemies
+	this->spawnTimer += 0.5f;						//Keeps spawn timer increasing
+	if (this->spawnTimer >= this->spawnTimerMax)	//Checks if spawn timer is greater than the max
 	{
-		//this->spawnTimer += 0.5f;
-		if (this->enemySpawnTimer >= this->enemySpawnTimerMax)
-		{
-			//this->enemy.push_back(new Enemy(rand() % 200, rand() % 200));
-			//Spawn the enemy and reset the timer
-			this->spawnEnemy();
-			this->enemySpawnTimer = 0.f;
-		}
-		else
-		{
-			this->enemySpawnTimer += 1.f;
-		}
+		this->enemies.push_back(new NPC_Enemy(rand() % 200, rand() % 200)); //Placing enemies in a random location
+		this->spawnTimer = 0.f;						//Resets timer every loop
 	}
-
-	//Move the enemies
-	for (auto &e : this ->enemies)
+	for (auto* enemy : this->enemies)
 	{
-		e.move(0.f, 5.f);
+		enemy->update();
 	}
 }
+
 
 //function to handle data updates each frame
 void Game::update()
@@ -92,13 +68,14 @@ void Game::update()
 			sf::Event event;
 			while (this->window->pollEvent(event))
 			{
+
 				///Exit
 				if (event.type == sf::Event::Closed)
 				{
 					this->window->close();
 				}
 			}
-			this->render();
+			this->render(); 
 			this->updateEnemies();
 			//Move player
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
@@ -122,11 +99,6 @@ void Game::update()
 	}
 }
 
-void Game::renderEnemies()
-{
-
-}
-
 //draws at updated position
 void Game::render()
 {
@@ -147,9 +119,10 @@ void Game::render()
 		//Draw Player
 		this->user->render(*this->window);
 
-		//Drawing game object
-		this->renderEnemies();
-
+		for (auto* enemy : this->enemies)
+		{
+			enemy->render(this->window);
+		}
 		//Draw map
 		this->window->display();
 	}
@@ -171,39 +144,13 @@ void Game::initPlayer(int select)					//using the same select variable that we g
 	}
 }
 
-//Function to initialize enemy
 void Game::initEnemy()
 {
-	this->enemy.setPosition(10.f, 10.f);
-	this->enemy.setSize(sf::Vector2f(100.f, 100.f));
-	this->enemy.setScale(sf::Vector2f(0.5f, 0.5f));
-	this->enemy.setFillColor(sf::Color::Cyan);
-	this->enemy.setOutlineColor(sf::Color::Green);
-	this->enemy.setOutlineThickness(1.f);
+	this->spawnTimerMax = 50.f;
+	this->spawnTimer = this->spawnTimerMax;
 
-
-}
-
-void Game::spawnEnemy()
-{
-	/*
-		Spawns enemies and sets their color and positions.
-		-Sets a random position.
-		-Sets a random color.
-		-Adds enemy to the vector.
-	*/
-
-	this->enemy.setPosition(
-		static_cast<float>(rand() % static_cast<int>(this->window->getSize().x - this->enemy.getSize().x)),
-		static_cast<float>(rand() % static_cast<int>(this->window->getSize().y - this->enemy.getSize().y))
-	);
 	
-	this->enemy.setFillColor(sf::Color::Green);
-
-	//Spawn the enemy
-	this->enemies.push_back(this->enemy);
 }
-
 
 
 void Game::selectCharacter(int select)											//Function Objective: Call in game() to select character, 

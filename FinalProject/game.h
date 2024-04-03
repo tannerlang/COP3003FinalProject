@@ -4,6 +4,7 @@
 #include "CurrentPlayer.h"
 #include "buildClass.h"
 #include "MainMenu.h"
+#include "NPC_Enemy.h"
 #include <iostream>
 #include <vector>
 #include <ctime>
@@ -21,15 +22,11 @@ private:
 
 	//Private Functions
 	void initPlayer(int select);
-	void initVariables();
 	void initEnemy();
 	void initWindow();
 
 	//Game logic
-	int points;
-	float enemySpawnTimer;
-	float enemySpawnTimerMax;
-	int maxEnemies;
+	
 
 	
 	//Main Menu
@@ -39,20 +36,21 @@ private:
 	Playable_Character* user;
 
 	//Enemy
-	std::vector<sf::RectangleShape> enemies;
-	sf::RectangleShape enemy;
+	float spawnTimer;
+	float spawnTimerMax;
+	std::vector<NPC_Enemy*> enemies;
 	//NPC_Enemy* enemy;
 
 public:
 	//Functions
-	void spawnEnemy();
+	
 
 	Game();
 	virtual ~Game();
 	void run();
-	void updateEnemies();
+	
 	void update();
-	void renderEnemies();
+	void updateEnemies();
 	void render();
 	void selectCharacter(int select);
 	void selectCharacterWidget();
