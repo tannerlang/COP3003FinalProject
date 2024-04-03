@@ -5,6 +5,9 @@
 #include "game.h"
 int main()
 {
+	//Init srand
+	std::srand(static_cast<unsigned>(time(NULL)));
+
 	Game PlayGame;
 	PlayGame.run();
 
