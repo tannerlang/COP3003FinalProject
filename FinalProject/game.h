@@ -34,7 +34,9 @@ private:
 
 	//Player
 	Playable_Character* user;
-
+	Brawler  brawler;
+	Archer archer;
+	
 	//Enemy
 	float spawnTimer;
 	float spawnTimerMax;
@@ -54,6 +56,6 @@ public:
 	void render();
 	void selectCharacter(int select);
 	void selectCharacterWidget();
-
+	int* selectPtr;
 };
 

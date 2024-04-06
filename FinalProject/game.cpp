@@ -119,10 +119,11 @@ void Game::initPlayer(int select)					//using the same select variable that we g
 	switch (select)
 	{
 	case 0:
-		this->user = new Brawler();
+		
+		this->user = &brawler;
 		break;
 	case 1:
-		this->user = new Archer();
+		this->user = &archer;
 	default:
 		break;
 	}
@@ -167,6 +168,8 @@ void Game::selectCharacterWidget()
 	
 	menu.MMrun();								//this works. 
 	int select = menu.returnData();
+	selectPtr = &select;
 	selectCharacter(select);
+	
 }
 
