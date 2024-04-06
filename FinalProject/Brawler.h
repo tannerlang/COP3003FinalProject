@@ -11,6 +11,7 @@ public:
     void initTexture();
     void initSprite();
     void initText();
+    void handleInput(Brawler* user);
 
 };
 

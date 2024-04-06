@@ -9,6 +9,7 @@ class CurrentPlayer : public Brawler, public Archer
 private:
 	
 public:
+
 	//factory function picks which opject to create and returns a ptr to new object created
 	Playable_Character* factory(PlayerClassID id)
 	{

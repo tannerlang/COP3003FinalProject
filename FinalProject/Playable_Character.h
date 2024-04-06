@@ -12,5 +12,6 @@ public:
 	void moveCharacter(const int dirX,const int dirY);
 	enum PlayerClassID { Brawl, Arch };
 	
+	void virtual handleInput(Playable_Character* user);
 };
 
