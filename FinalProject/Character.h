@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include"PlayerState.h"
 #include<iostream>
 class Character
 {
@@ -25,15 +26,21 @@ private:
 	int agility;	//dodge and speed
 	int dexterity;	//attack-speed and crit
 	
+	
 
 
 
 protected:
 	sf::Texture texture;
 	sf::Sprite sprite;
+
+	//States
+	PlayerState* PlayerState_;
 	
 	
 public:
+	enum State { STATE_STANDING, STATE_RUNNING, STATE_ATTACK, STATE_DODGE };
+	State state_;
 	Character();
 	virtual ~Character();
 	int get_Health();
@@ -42,9 +49,11 @@ public:
 	float get_Movement_Speed();
 	void update();
 	void render(sf::RenderTarget& target);
+	State getState_()
+	{
+		return state_;
+	}
 	
-	
-
 
 };
 

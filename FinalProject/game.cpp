@@ -101,6 +101,8 @@ void Game::update()
 			this->render();
 			this->updateEnemies();
 			//Move player
+			//STATE MACHINE: IN PROGRESS
+	
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 			{
 				this->user->moveCharacter(-1.f, 0.f);

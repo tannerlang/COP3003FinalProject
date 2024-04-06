@@ -148,9 +148,11 @@
     <ClCompile Include="gameTile.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="MovingState.cpp" />
     <ClCompile Include="NPC_Enemy.cpp" />
     <ClCompile Include="Playable_Character.cpp" />
     <ClCompile Include="gameWorld.cpp" />
+    <ClCompile Include="PlayerState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\..\Desktop\gametiles\plains.png" />
@@ -175,8 +177,10 @@
     <ClInclude Include="gameTile.h" />
     <ClInclude Include="gameWorld.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="MovingState.h" />
     <ClInclude Include="NPC_Enemy.h" />
     <ClInclude Include="Playable_Character.h" />
+    <ClInclude Include="PlayerState.h" />
     <ClInclude Include="resource1.h" />
   </ItemGroup>
   <ItemGroup>

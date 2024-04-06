@@ -11,6 +11,13 @@ public:
 	
 	void moveCharacter(const int dirX,const int dirY);
 	enum PlayerClassID { Brawl, Arch };
+
+	//Functions to deal with states:
+	virtual void handleInput();
+	virtual void update();
+
+
+
 	
 };
 
