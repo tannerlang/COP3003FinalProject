@@ -31,8 +31,9 @@ private:
 protected:
 	sf::Texture texture;
 	sf::Sprite sprite;
-	
-	
+	enum State{STATE_STANDING, STATE_MOVING, STATE_ATTACKING};
+	State state_ = STATE_STANDING;
+
 public:
 	Character();
 	virtual ~Character();
@@ -42,9 +43,6 @@ public:
 	float get_Movement_Speed();
 	void update();
 	void render(sf::RenderTarget& target);
-	
-	
-
 
 };
 

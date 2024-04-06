@@ -77,24 +77,8 @@ void Game::update()
 			}
 			this->render(); 
 			this->updateEnemies();
-			//Move player
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-			{
-				this->user->moveCharacter(-1.f, 0.f);
-			}
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-			{
-				this->user->moveCharacter(1.f, 0.f);
-			}
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-			{
-				this->user->moveCharacter(0.f, -1.f);
-			}
-			else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-			{
-				this->user->moveCharacter(0.f, 1.f);
-			}
-			//TODO: add controller support
+			//MOVE Player
+			this->user->handleInput(user);				//handles user input, also a simple state machine for player state
 		}
 	}
 }
