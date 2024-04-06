@@ -29,7 +29,7 @@ public:
 
 	virtual ~CurrentPlayer() = default;
 
-
+	virtual void handleInput(Playable_Character* user) {}
 
 								//need to build a "factory" to build
 								//A factory is a function that takes a set of arguments indicating what to build, and returns an instance of what needed building.

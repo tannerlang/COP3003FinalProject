@@ -33,5 +33,7 @@ public:
 	{
 		return pCharacter;												//returns pCharacter... do we use this to set what this object points to a pointer in main called user?
 	}
+
+	virtual void handleInput(Playable_Character* user) {}
 };
 

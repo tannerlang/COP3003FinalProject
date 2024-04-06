@@ -28,7 +28,7 @@ void Brawler::initText()
 	CharacterName.setPosition(0, 0);
 }
 
-void Brawler::handleInput(Brawler* user)				//overriding handleinput function.
+void Brawler::handleInput(Playable_Character* user)				//overriding handleinput function.
 {
 	switch (state_)
 	{
@@ -42,25 +42,37 @@ void Brawler::handleInput(Brawler* user)				//overriding handleinput function.
 				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
 			}
 			user->moveCharacter(-1.f, 0.f);
-			//moving left animation
+			
 			state_ = STATE_MOVING;
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			user->moveCharacter(1.f, 0.f);
-			//moving right animation
+
+			if (!this->texture.loadFromFile("Brawler_EastFace_Default_64x64.png"))	//Displays PNG for Brawler
+			{
+				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
+			}
 			state_ = STATE_MOVING;
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
 			user->moveCharacter(0.f, -1.f);
-			//moving up/forward animation
+
+			if (!this->texture.loadFromFile("Brawler_NorthFace_Default_64x64.png"))	//Displays PNG for Brawler
+			{
+				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
+			}
 			state_ = STATE_MOVING;
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		{
 			user->moveCharacter(0.f, 1.f);
-			//moving south animation
+
+			if (!this->texture.loadFromFile("Brawler_SouthFace_Default_64x64.png"))	//Displays PNG for Brawler
+			{
+				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
+			}
 			state_ = STATE_MOVING;
 		}
 

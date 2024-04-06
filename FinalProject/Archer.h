@@ -10,6 +10,6 @@ public:
 	void initTexture();
 	void initSprite();
 	void initText();
-	void handleInput(Archer* user);
+	void handleInput(Playable_Character* user);
 };
 

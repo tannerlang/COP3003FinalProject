@@ -27,7 +27,7 @@ void Archer::initText()
 	CharacterName.setPosition(0, 0);
 }
 
-void Archer::handleInput(Archer* user)
+void Archer::handleInput(Playable_Character* user)
 {
 	switch (state_)
 	{
