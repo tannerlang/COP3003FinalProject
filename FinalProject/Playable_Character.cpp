@@ -24,6 +24,10 @@ void Playable_Character::handleInput(Playable_Character* user)
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
+			if (!this->texture.loadFromFile("Brawler_WestFace_Default_64x64.png"))	//Displays PNG for Brawler
+			{
+				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
+			}
 			user->moveCharacter(-1.f, 0.f);
 			//moving left animation
 			state_ = STATE_MOVING;
