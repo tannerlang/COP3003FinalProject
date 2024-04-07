@@ -5,6 +5,7 @@ Brawler::Brawler()
 	this->initTexture();	//Calls on the pointers which will be holding the PNG
 	this->initSprite();
 	this->initText();		//text for debugging
+	this->createHitbox(this->sprite, 1.f, 1.f, 64.f, 64.f);
 };
 
 void Brawler::initTexture()	//Inputting information to pointer

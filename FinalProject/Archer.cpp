@@ -4,6 +4,7 @@ Archer::Archer()
 {
 	this->initTexture();	//Calls on the pointers 
 	this->initSprite();
+	this->createHitbox(this->sprite, 1.f, 1.f, 64.f, 64.f);
 };
 
 void Archer::initTexture()	//Inputting information into pointers
