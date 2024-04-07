@@ -10,7 +10,7 @@ private:
 
 protected:
 	//core stats
-	unsigned int health;
+	int health;
 	int max_health;
 	int level;
 	int exp;

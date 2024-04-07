@@ -160,34 +160,38 @@ void Game::encounter()
 		//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range (HAVE TO FIGURE OUT ALL THAT LOGIC)
 
 		int dmg;
-		
+		while (this->user->getState() == 2)
+		{
 			//TODO: maybe figure out how to make the user->sprite have a larger global bounds that is invisible to act as a boundary range.
 			if (this->user->hitbox->sprite.getGlobalBounds().contains(this->entity->hitbox->sprite.getPosition().x, this->entity->hitbox->sprite.getPosition().y)) //create range boundry for user
 			{
-					dmg = this->user->getAttackDamage();
-					this->entity->takeDamage(dmg);
-					if (this->entity->isAlive())
-					{
-						int entityDmg = this->entity->getAttackDamage();
-						this->user->takeDamage(entityDmg);
-						encounter();		//recursive to keep calling until entity iead.
-					}
-					else if (!this->user->isAlive())
-					{
-						//destroy(user);
-					}
-					else if (!this->entity->isAlive())
-					{
-						//destroy(entity);
-					}
-					
-				
+				dmg = this->user->getAttackDamage();
+				this->entity->takeDamage(dmg);
+				if (this->entity->isAlive())
+				{
+					int entityDmg = this->entity->getAttackDamage();
+					this->user->takeDamage(entityDmg);
+					encounter();		//recursive to keep calling until entity iead.
+				}
+				else if (!this->user->isAlive())
+				{
+					destroy(user);
+				}
+				else if (!this->entity->isAlive())
+				{
+					destroy(entity);
+				}
+
+
 			}//break if out of range
+		}
+			
 		
 	
 }
 
 void Game::destroy(Character* obj)
 {
+	obj = nullptr;
 	delete obj;
 }
