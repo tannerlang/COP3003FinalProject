@@ -37,6 +37,7 @@ void Brawler::handleInput(Playable_Character* user)				//overriding handleinput 
 		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
+			
 			if (!this->texture.loadFromFile("Brawler_WestFace_Default_64x64.png"))	//Displays PNG for Brawler
 			{
 				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
@@ -85,7 +86,6 @@ void Brawler::handleInput(Playable_Character* user)				//overriding handleinput 
 			}
 			user->attack();
 		}
-		break;
 
 	case Character::STATE_MOVING:
 		if (sf::Event::KeyReleased)
