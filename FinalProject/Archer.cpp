@@ -79,8 +79,13 @@ void Archer::handleInput(Playable_Character* user)
 
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
+			if (!this->texture.loadFromFile("Archer_Attack.png"))	//Displays PNG for Brawler
+			{
+				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
+			}
 			state_ = STATE_ATTACKING;
 			//user->attack();
+
 		}
 		break;
 
@@ -93,10 +98,10 @@ void Archer::handleInput(Playable_Character* user)
 		break;
 
 	case Character::STATE_ATTACKING:
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		if (sf::Event::KeyReleased)
 		{
 			state_ = STATE_STANDING;
-
+			//static animation in the direction left off.
 		}
 		break;
 	default:

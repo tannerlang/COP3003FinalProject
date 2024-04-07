@@ -1,6 +1,7 @@
 #ifndef SKELETON_H
 #define SKELETON_H
 #include "NPC_Enemy.h"
+
 class Skeleton : public NPC_Enemy
 {
 public:

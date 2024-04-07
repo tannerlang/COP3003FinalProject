@@ -34,7 +34,8 @@ void Skeleton::update(float spawnTimer, float spawnTimerMax)
 	//Spawning enemies
 	spawnTimer += 0.5f;										//Keeps spawn timer increasing
 	if (spawnTimer >= spawnTimerMax)					//Checks if spawn timer is greater than the max
-	{													//Placing enemies in a random location
+	{	
+																//Placing enemies in a random location
 		spawnTimer = 0.f;										//Resets timer every loop
 	}
 	this->hitbox->update();
