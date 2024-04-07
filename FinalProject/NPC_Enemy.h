@@ -9,14 +9,12 @@ private:
 	
 
 public:
-	NPC_Enemy(float posX, float posY);
+	
+	NPC_Enemy();
 	void initTexture();
 	void initSprite();
 	void set_Damage();
-
-	//Functions
-	void update();
-	void render(sf::RenderTarget* target);
+	
 };
 
 #endif //!NPC_ENEMY_H

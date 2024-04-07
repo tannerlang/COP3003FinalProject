@@ -34,14 +34,15 @@ private:
 
 	//Player
 	Playable_Character* user;
+	NPC_Enemy* entity;
 	Brawler  brawler;
 	Archer archer;
 	
 	//Enemy
 	float spawnTimer;
 	float spawnTimerMax;
-	std::vector<NPC_Enemy*> enemies;
-	//NPC_Enemy* enemy;
+	NPC_Enemy* enemies;
+	NPC_Enemy enemy;
 
 public:
 	//Functions

@@ -23,12 +23,7 @@ Game::~Game()
 {
 	delete this->window;
 	delete this->user;
-
-	//Deleting enemies to conserve memory
-	for (auto* i : this->enemies)
-	{
-		delete i;
-	}
+	delete this->enemies;
 }
 
 //functions
@@ -37,23 +32,25 @@ void Game::run()
 	while (this->window->isOpen())
 	{
 		this->update();
-
 	}
 }
 
 void Game::updateEnemies()
 {
+
+
+
 	//Spawning enemies
-	this->spawnTimer += 0.5f;						//Keeps spawn timer increasing
-	if (this->spawnTimer >= this->spawnTimerMax)	//Checks if spawn timer is greater than the max
+	this->spawnTimer += 0.5f;										//Keeps spawn timer increasing
+	if (this->spawnTimer >= this->spawnTimerMax)					//Checks if spawn timer is greater than the max
 	{
-		this->enemies.push_back(new NPC_Enemy(rand() % 200, rand() % 200)); //Placing enemies in a random location
-		this->spawnTimer = 0.f;						//Resets timer every loop
+		//enemy.render(*this->window);
+		this->enemies->render(*this->window);						//Placing enemies in a random location
+		this->spawnTimer = 0.f;										//Resets timer every loop
 	}
-	for (auto* enemy : this->enemies)
-	{
-		enemy->update();
-	}
+
+	
+	
 }
 
 
@@ -77,6 +74,7 @@ void Game::update()
 			}
 			this->render(); 
 			this->updateEnemies();
+			
 			//MOVE Player
 			this->user->handleInput(user);				//handles user input, also a simple state machine for player state
 			this->user->update();
@@ -105,10 +103,9 @@ void Game::render()
 		//Draw Player
 		this->user->render(*this->window);
 
-		for (auto* enemy : this->enemies)
-		{
-			enemy->render(this->window);
-		}
+		//Draw Enemy		
+		this->enemies->render(*this->window);
+		
 		//Draw map
 		this->window->display();
 	}
@@ -136,7 +133,7 @@ void Game::initEnemy()
 	this->spawnTimerMax = 50.f;
 	this->spawnTimer = this->spawnTimerMax;
 
-	
+	this->enemies = &enemy;
 }
 
 
