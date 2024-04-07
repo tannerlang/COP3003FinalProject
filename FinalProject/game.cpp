@@ -45,7 +45,7 @@ void Game::updateEnemies()
 	if (this->spawnTimer >= this->spawnTimerMax)					//Checks if spawn timer is greater than the max
 	{
 		//enemy.render(*this->window);
-		this->enemies->render(*this->window);						//Placing enemies in a random location
+		this->enemies->render(this->window);						//Placing enemies in a random location
 		this->spawnTimer = 0.f;										//Resets timer every loop
 	}
 
@@ -104,7 +104,7 @@ void Game::render()
 		this->user->render(this->window);
 
 		//Draw Enemy		
-		this->enemies->render(*this->window);
+		this->enemies->render(this->window);
 		
 		//Draw map
 		this->window->display();
@@ -132,8 +132,6 @@ void Game::initEnemy()
 {
 	this->spawnTimerMax = 50.f;
 	this->spawnTimer = this->spawnTimerMax;
-  EnemySpawning
-
 	this->enemies = &enemy;
 
 
