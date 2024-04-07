@@ -146,6 +146,7 @@
     <ClCompile Include="CurrentPlayer.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameTile.cpp" />
+    <ClCompile Include="Hitbox.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="NPC_Enemy.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="game.h" />
     <ClInclude Include="gameTile.h" />
     <ClInclude Include="gameWorld.h" />
+    <ClInclude Include="Hitbox.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="NPC_Enemy.h" />
     <ClInclude Include="Playable_Character.h" />
