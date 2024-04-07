@@ -47,16 +47,46 @@ void Skeleton::moveSkeleton(const int dirX, const int dirY)
 
 void Skeleton::skeleton_Movement()
 {
+	
 	int Random = rand() % 4;
-	switch (Random)
+	while (isAlive()) {
+		switch (Random)
+		{
+		case (0):
+			moveSkeleton(1.f, 1.f);
+		case (1):
+			moveSkeleton(-1.f, 1.f);
+		case (2):
+			moveSkeleton(1.f, -1.f);
+		case (3):
+			moveSkeleton(1.f, 1.f);
+		}
+
+
+	}
+}
+
+void Skeleton::aggression(Playable_Character* user, Skeleton* entity, gameWorld gameWorld1)
+{
+	sf::Vector2f userPos = user->sprite.getPosition();
+	sf::Vector2f enemyPos = entity->sprite.getPosition();
+
+	if (userPos.x > enemyPos.x) 
 	{
-	case (0):
-		moveSkeleton(1.f, 0);
-	case (1):
-		moveSkeleton(1.f, 0);
-	case (2):
-		moveSkeleton(0.f, -1.f);
-	case (3):
+		moveSkeleton(1.f, 0.f);
+	}
+	if (userPos.y > enemyPos.y)
+	{
 		moveSkeleton(0.f, 1.f);
 	}
+	if (userPos.x < enemyPos.x)
+	{
+		moveSkeleton(-1.f, 0.f);
+	}
+	if (userPos.y < enemyPos.y)
+	{
+		moveSkeleton(0.f, -1.f);
+	}
+
+
 }

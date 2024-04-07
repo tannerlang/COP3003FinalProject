@@ -31,4 +31,9 @@ void NPC_Enemy::initSprite()
 	
 }
 
+void NPC_Enemy::aggression()
+{
+
+}
+
 
