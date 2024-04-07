@@ -13,5 +13,8 @@ public:
     void initText();
     void handleInput(Playable_Character* user);
     void attack();
+    int getAttackDamage();
+    void set_Damage();
+    void takeDamage(int damage);
 };
 

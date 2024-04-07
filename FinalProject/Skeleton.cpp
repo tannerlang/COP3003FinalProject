@@ -9,6 +9,11 @@ Skeleton::Skeleton()
 	this->createHitbox(this->sprite, 1.f, 1.f, 64.f, 64.f);
 }
 
+Skeleton::~Skeleton()
+{
+	
+
+}
 void Skeleton::set_Damage()
 {
 	damage = 10;
@@ -89,4 +94,17 @@ void Skeleton::aggression(Playable_Character* user, Skeleton* entity, gameWorld 
 	}
 
 
+}
+
+int Skeleton::getAttackDamage()
+{
+	return damage;
+}
+
+void Skeleton::takeDamage(int damage)
+{
+	int health;
+	health = this->get_Health();
+	health = health - damage;
+	this->set_Health(health);
 }
