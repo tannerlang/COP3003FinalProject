@@ -5,7 +5,8 @@ Skeleton::Skeleton()
 	this->initTexture();
 	this->initSprite();
 	this->set_Damage();
-	this->set_Movement_Speed(3.f);
+	this->set_Movement_Speed(1.f);
+	this->createHitbox(this->sprite, 1.f, 1.f, 64.f, 64.f);
 }
 
 void Skeleton::set_Damage()
@@ -36,6 +37,7 @@ void Skeleton::update(float spawnTimer, float spawnTimerMax)
 	{													//Placing enemies in a random location
 		spawnTimer = 0.f;										//Resets timer every loop
 	}
+	this->hitbox->update();
 }
 
 void Skeleton::moveSkeleton(const int dirX, const int dirY)
@@ -45,16 +47,46 @@ void Skeleton::moveSkeleton(const int dirX, const int dirY)
 
 void Skeleton::skeleton_Movement()
 {
+	
 	int Random = rand() % 4;
-	switch (Random)
+	while (isAlive()) {
+		switch (Random)
+		{
+		case (0):
+			moveSkeleton(1.f, 1.f);
+		case (1):
+			moveSkeleton(-1.f, 1.f);
+		case (2):
+			moveSkeleton(1.f, -1.f);
+		case (3):
+			moveSkeleton(1.f, 1.f);
+		}
+
+
+	}
+}
+
+void Skeleton::aggression(Playable_Character* user, Skeleton* entity, gameWorld gameWorld1)
+{
+	sf::Vector2f userPos = user->sprite.getPosition();
+	sf::Vector2f enemyPos = entity->sprite.getPosition();
+
+	if (userPos.x > enemyPos.x) 
 	{
-	case (0):
-		moveSkeleton(1.f, 0);
-	case (1):
-		moveSkeleton(1.f, 0);
-	case (2):
-		moveSkeleton(0.f, -1.f);
-	case (3):
+		moveSkeleton(1.f, 0.f);
+	}
+	if (userPos.y > enemyPos.y)
+	{
 		moveSkeleton(0.f, 1.f);
 	}
+	if (userPos.x < enemyPos.x)
+	{
+		moveSkeleton(-1.f, 0.f);
+	}
+	if (userPos.y < enemyPos.y)
+	{
+		moveSkeleton(0.f, -1.f);
+	}
+
+
 }

@@ -12,6 +12,7 @@ public:
 	void update(float spawnTimer, float spawnTimerMax);
 	void moveSkeleton(const int dirX, const int dirY);
 	void skeleton_Movement();
+	void aggression(Playable_Character* user, Skeleton* entity, gameWorld gameWorld1);
 };
 
 #endif //!SKELETON_H
