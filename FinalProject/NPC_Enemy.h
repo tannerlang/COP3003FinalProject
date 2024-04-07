@@ -6,13 +6,13 @@ class NPC_Enemy : public Character
 {
 
 private:
-
+	
 
 public:
 	NPC_Enemy(float posX, float posY);
 	void initTexture();
 	void initSprite();
-
+	void set_Damage();
 
 	//Functions
 	void update();

@@ -105,7 +105,13 @@ void Brawler::handleInput(Playable_Character* user)				//overriding handleinput 
 
 void Brawler::attack()
 {
-
+	while (isAlive())
+	{
+		/*if (in range of an enemy entity on the map)
+		{
+			
+		}*/
+	}
 }
 
 	

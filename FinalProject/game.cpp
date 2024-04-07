@@ -173,3 +173,28 @@ void Game::selectCharacterWidget()
 	
 }
 
+void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gameWorld1)
+{
+	//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range
+	//figure out all of that logic.
+	/*int dmg;
+	while (this->user->isAlive())
+	{
+		
+		if (entity->getPosition() == user->getPosition()+-1 in every direction)
+		{
+			dmg = user->getAttackDamage();
+			entity->takeDamage(dmg);
+			if (entity->isAlive())
+			{
+				int entityDmg = entity->getAttackDamage();
+				user->takeDamage(entityDmg);
+				encounter(user, entity, gameWorld1);		//recursive to keep calling until entity iead.
+			}
+			else
+			{
+				break;
+			}
+		}
+	}*/
+}

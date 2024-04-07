@@ -4,12 +4,14 @@
 class Character
 {
 private:
+
+
+protected:
 	//core stats
 	int health;
 	int max_health;
 	int level;
 	int exp;
-
 	int max_stamina;
 	int stamina;
 	int damage;
@@ -23,12 +25,7 @@ private:
 	int vitality;	//health and stamina
 	int strength;	//damage
 	int agility;	//dodge and speed
-	int dexterity;	//attack-speed and crit
-	
-
-
-
-protected:
+	int dexterity;	//attack-speed and c
 	sf::Texture texture;
 	sf::Sprite sprite;
 	enum State{STATE_STANDING, STATE_MOVING, STATE_ATTACKING};
@@ -43,6 +40,10 @@ public:
 	float get_Movement_Speed();
 	void update();
 	void render(sf::RenderTarget& target);
+	virtual bool isAlive();
+	int getAttackDamage();
+	void takeDamage(int damage);
+	
 
 };
 

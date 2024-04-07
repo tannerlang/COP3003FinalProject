@@ -57,5 +57,8 @@ public:
 	void selectCharacter(int select);
 	void selectCharacterWidget();
 	int* selectPtr;
+
+	//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range
+	void encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gameWorld1);
 };
 

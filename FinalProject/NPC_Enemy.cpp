@@ -4,10 +4,14 @@ NPC_Enemy::NPC_Enemy(float posX, float posY)
 {
 	this->initTexture();
 	this->initSprite();
+	this->set_Damage();
 	
 };
 
-
+void NPC_Enemy::set_Damage()
+{
+	damage = 10;
+}
 
 //Public functions
 void NPC_Enemy::initTexture()

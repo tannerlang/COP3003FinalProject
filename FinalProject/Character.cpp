@@ -59,3 +59,17 @@ float Character::get_Movement_Speed()
 {
 	return movementSpeed;
 }
+
+bool Character::isAlive()
+{
+	return get_Health() > 0;
+}
+
+int Character::getAttackDamage()
+{
+	return damage;
+}
+void Character::takeDamage(int damage)
+{
+	set_Health(health - damage);
+}
