@@ -177,7 +177,7 @@ void Game::selectCharacterWidget()
 
 void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gameWorld1)
 {
-	sf::Vector2f worldPos = user->sprite.getPosition();
+	sf::Vector2f userPos = user->sprite.getPosition();
 	sf::Vector2f enemyPos = entity->sprite.getPosition();
 	//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range (HAVE TO FIGURE OUT ALL THAT LOGIC)
 	
@@ -185,7 +185,7 @@ void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gam
 	while (this->user->isAlive()) //TODO: need to give functionality for dying for both playable and enemy characters
 	{
 		//TODO: maybe figure out how to make the user->sprite have a larger global bounds that is invisible to act as a boundary range.
-		if (user->sprite.getGlobalBounds().contains(sf::Vector2f(enemyPos.x, worldPos.y)))
+		if (user->sprite.getGlobalBounds().contains(sf::Vector2f(enemyPos.x, enemyPos.y)))//create range boundry for user
 		{
 			dmg = user->getAttackDamage();
 			entity->takeDamage(dmg);
@@ -205,6 +205,6 @@ void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gam
 				delete entity;
 				break;
 			}
-		}
+		}//break if out of range
 	}
 }

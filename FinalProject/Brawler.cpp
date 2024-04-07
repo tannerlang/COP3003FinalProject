@@ -77,7 +77,7 @@ void Brawler::handleInput(Playable_Character* user)				//overriding handleinput 
 			state_ = STATE_MOVING;
 		}
 
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) //TODO: figure out how to make attack directional
 		{
 			state_ = STATE_ATTACKING;
 			if (!this->texture.loadFromFile("Brawler_SouthFace_Attack1_64x64.png.png"))	//Displays PNG for Brawler
@@ -96,10 +96,10 @@ void Brawler::handleInput(Playable_Character* user)				//overriding handleinput 
 		break;
 
 	case Character::STATE_ATTACKING:
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		if (sf::Event::KeyReleased)
 		{
 			state_ = STATE_STANDING;
-			
+			//static animation in the direction left off.
 		}
 		break;
 	default:
