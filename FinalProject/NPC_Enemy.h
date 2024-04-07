@@ -2,7 +2,7 @@
 #define NPC_ENEMY_H
 
 #include "Character.h"
-class NPC_Enemy : public Character
+class NPC_Enemy : public virtual Character
 {
 
 private:
@@ -14,6 +14,8 @@ public:
 	void initTexture();
 	void initSprite();
 	void set_Damage();
+	void update(float spawnTimer, float spawnTimerMax);
+	
 	
 };
 

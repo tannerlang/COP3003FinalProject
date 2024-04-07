@@ -19,16 +19,12 @@ void NPC_Enemy::set_Damage()
 //Public functions
 void NPC_Enemy::initTexture()
 {
-	if (!this->texture.loadFromFile("NPC_Enemy.png")) //upload PNG of the enemy
-	{
-		std::cout << "Texture Load Failure";
-	}
+	
 }
 
 void NPC_Enemy::initSprite()
 {
-	//set texture to sprite
-	this->sprite.setTexture(this->texture);
+	
 }
 
 

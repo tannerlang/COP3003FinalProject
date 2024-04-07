@@ -33,6 +33,8 @@ Character::~Character()
 void Character::update()
 {
 	this->hitbox->update();
+
+
 }
 
 void Character::render(sf::RenderTarget* target)

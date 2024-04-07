@@ -1,0 +1,60 @@
+#include "Skeleton.h"
+
+Skeleton::Skeleton()
+{
+	this->initTexture();
+	this->initSprite();
+	this->set_Damage();
+	this->set_Movement_Speed(3.f);
+}
+
+void Skeleton::set_Damage()
+{
+	damage = 10;
+}
+
+//Public functions
+void Skeleton::initTexture()
+{
+	if (!this->texture.loadFromFile("Skeleton.png")) //upload PNG of the enemy
+	{
+		std::cout << "Texture Load Failure";
+	}
+}
+
+void Skeleton::initSprite()
+{
+	//set texture to sprite
+	this->sprite.setTexture(this->texture);
+}
+
+void Skeleton::update(float spawnTimer, float spawnTimerMax)
+{
+	//Spawning enemies
+	spawnTimer += 0.5f;										//Keeps spawn timer increasing
+	if (spawnTimer >= spawnTimerMax)					//Checks if spawn timer is greater than the max
+	{													//Placing enemies in a random location
+		spawnTimer = 0.f;										//Resets timer every loop
+	}
+}
+
+void Skeleton::moveSkeleton(const int dirX, const int dirY)
+{
+	this->sprite.move(this->get_Movement_Speed() * dirX, this->get_Movement_Speed() * dirY);                  //moves character                                                                                                         //for now leave it to make sure it works
+}
+
+void Skeleton::skeleton_Movement()
+{
+	int Random = rand() % 4;
+	switch (Random)
+	{
+	case (0):
+		moveSkeleton(1.f, 0);
+	case (1):
+		moveSkeleton(1.f, 0);
+	case (2):
+		moveSkeleton(0.f, -1.f);
+	case (3):
+		moveSkeleton(0.f, 1.f);
+	}
+}

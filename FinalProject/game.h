@@ -4,7 +4,7 @@
 #include "CurrentPlayer.h"
 #include "buildClass.h"
 #include "MainMenu.h"
-#include "NPC_Enemy.h"
+#include "Skeleton.h"
 #include <iostream>
 #include <vector>
 #include <ctime>
@@ -34,15 +34,14 @@ private:
 
 	//Player
 	Playable_Character* user;
-	NPC_Enemy* entity;
+	Skeleton* entity = new Skeleton();
 	Brawler  brawler;
 	Archer archer;
 	
 	//Enemy
 	float spawnTimer;
 	float spawnTimerMax;
-	NPC_Enemy* enemies;
-	NPC_Enemy enemy;
+	
 
 public:
 	//Functions
@@ -53,7 +52,6 @@ public:
 	void run();
 	
 	void update();
-	void updateEnemies();
 	void render();
 	void selectCharacter(int select);
 	void selectCharacterWidget();
