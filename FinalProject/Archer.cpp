@@ -83,9 +83,9 @@ void Archer::handleInput(Playable_Character* user)
 			{
 				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
 			}
-			state_ = STATE_ATTACKING;
+			//state_ = STATE_ATTACKING;			//Code works without this. 
 			//user->attack();
-
+			
 		}
 		break;
 
