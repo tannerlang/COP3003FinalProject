@@ -18,7 +18,7 @@ public:
 	void initSprite();
 	void set_Damage();
 	void aggression();
-	
+	void update(float spawnTimer, float spawnTimerMax);
 	
 };
 

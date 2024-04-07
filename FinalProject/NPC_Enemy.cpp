@@ -18,6 +18,7 @@ void NPC_Enemy::set_Damage()
 
 void NPC_Enemy::update(float spawnTimer, float spawnTimerMax)
 {
+
 }
 
 //Public functions
@@ -35,5 +36,6 @@ void NPC_Enemy::aggression()
 {
 
 }
+
 
 
