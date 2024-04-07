@@ -120,10 +120,10 @@ void Game::initPlayer(int select)					//using the same select variable that we g
 	{
 	case 0:
 		
-		this->user = &brawler;
+		this->user = &brawler;					//sets the user equal to brawler class.
 		break;
 	case 1:
-		this->user = &archer;
+		this->user = &archer;					//sets user equal to archer class.
 	default:
 		break;
 	}

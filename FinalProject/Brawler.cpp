@@ -79,6 +79,10 @@ void Brawler::handleInput(Playable_Character* user)				//overriding handleinput 
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
 			state_ = STATE_ATTACKING;
+			if (!this->texture.loadFromFile("Brawler_SouthFace_Attack1_64x64.png.png"))	//Displays PNG for Brawler
+			{
+				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
+			}
 			user->attack();
 		}
 		break;
