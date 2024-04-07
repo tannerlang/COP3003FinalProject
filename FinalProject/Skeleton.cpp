@@ -5,7 +5,8 @@ Skeleton::Skeleton()
 	this->initTexture();
 	this->initSprite();
 	this->set_Damage();
-	this->set_Movement_Speed(3.f);
+	this->set_Movement_Speed(1.f);
+	this->createHitbox(this->sprite, 1.f, 1.f, 64.f, 64.f);
 }
 
 void Skeleton::set_Damage()
@@ -36,6 +37,7 @@ void Skeleton::update(float spawnTimer, float spawnTimerMax)
 	{													//Placing enemies in a random location
 		spawnTimer = 0.f;										//Resets timer every loop
 	}
+	this->hitbox->update();
 }
 
 void Skeleton::moveSkeleton(const int dirX, const int dirY)

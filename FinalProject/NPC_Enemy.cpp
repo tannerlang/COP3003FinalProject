@@ -16,6 +16,10 @@ void NPC_Enemy::set_Damage()
 	damage = 10;
 }
 
+void NPC_Enemy::update(float spawnTimer, float spawnTimerMax)
+{
+}
+
 //Public functions
 void NPC_Enemy::initTexture()
 {

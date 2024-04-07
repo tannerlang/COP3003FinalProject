@@ -29,16 +29,18 @@ protected:
 	int agility;	//dodge and speed
 	int dexterity;	//attack-speed and c
 	
-	enum State{STATE_STANDING, STATE_MOVING, STATE_ATTACKING};
+	enum State { STATE_STANDING, STATE_MOVING, STATE_ATTACKING };
 	State state_ = STATE_STANDING;
-	Hitbox* hitbox;
+	
 
 public:
+	
 	//members
 	sf::Texture texture;
 	sf::Sprite sprite;
 
 	//methods
+	Hitbox* hitbox;
 	Character();
 	virtual ~Character();
 	int get_Health();
@@ -51,7 +53,10 @@ public:
 	int getAttackDamage();
 	void takeDamage(int damage);
 	void createHitbox(sf::Sprite& sprite, const float offset_x, const float offset_y, float width, float height);
-	
+	int getState()
+	{
+		return state_;
+	}
 
 };
 

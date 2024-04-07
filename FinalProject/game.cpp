@@ -54,6 +54,7 @@ void Game::update()
 					this->window->close();
 				}
 			}
+			this->encounter(this->user, this->entity, gameWorld1);
 			this->render(); 
 			this->entity->skeleton_Movement();
 			this->entity->update(this->spawnTimer, this->spawnTimerMax);
@@ -152,36 +153,40 @@ void Game::selectCharacterWidget()
 	
 }
 
-void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gameWorld1)
+void Game::encounter(Playable_Character* user, Skeleton* entity, gameWorld gameWorld1)
 {
-	sf::Vector2f userPos = user->sprite.getPosition();
-	sf::Vector2f enemyPos = entity->sprite.getPosition();
-	//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range (HAVE TO FIGURE OUT ALL THAT LOGIC)
-	
-	int dmg;
-	while (this->user->isAlive()) //TODO: need to give functionality for dying for both playable and enemy characters
+	if (user->getState() == 2)
 	{
-		//TODO: maybe figure out how to make the user->sprite have a larger global bounds that is invisible to act as a boundary range.
-		if (user->sprite.getGlobalBounds().contains(sf::Vector2f(enemyPos.x, enemyPos.y)))//create range boundry for user
+		sf::Vector2f userPos = user->sprite.getPosition();
+		sf::Vector2f enemyPos = entity->sprite.getPosition();
+		//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range (HAVE TO FIGURE OUT ALL THAT LOGIC)
+
+		int dmg;
+		while (this->user->isAlive()) //TODO: need to give functionality for dying for both playable and enemy characters
 		{
-			dmg = user->getAttackDamage();
-			entity->takeDamage(dmg);
-			if (entity->isAlive())
+			//TODO: maybe figure out how to make the user->sprite have a larger global bounds that is invisible to act as a boundary range.
+			if (this->user->hitbox->hitbox.getGlobalBounds().contains(enemyPos))//create range boundry for user
 			{
-				int entityDmg = entity->getAttackDamage();
-				user->takeDamage(entityDmg);
-				encounter(user, entity, gameWorld1);		//recursive to keep calling until entity iead.
-			}
-			if (!user->isAlive())
-			{
-				delete user;
-				break;
-			}
-			else
-			{
-				delete entity;
-				break;
-			}
-		}//break if out of range
+				dmg = user->getAttackDamage();
+				entity->takeDamage(dmg);
+				if (entity->isAlive())
+				{
+					int entityDmg = entity->getAttackDamage();
+					user->takeDamage(entityDmg);
+					encounter(user, entity, gameWorld1);		//recursive to keep calling until entity iead.
+				}
+				if (!user->isAlive())
+				{
+					delete user;
+					break;
+				}
+				else
+				{
+					delete entity;
+					break;
+				}
+			}//break if out of range
+		}
 	}
+	
 }
