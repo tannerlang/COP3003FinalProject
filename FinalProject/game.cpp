@@ -185,7 +185,7 @@ void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gam
 	while (this->user->isAlive()) //TODO: need to give functionality for dying for both playable and enemy characters
 	{
 		//TODO: maybe figure out how to make the user->sprite have a larger global bounds that is invisible to act as a boundary range.
-		if (user->sprite.getGlobalBounds().contains(sf::Vector2f(enemyPos.x + 1 , worldPos.y + 1)))
+		if (user->sprite.getGlobalBounds().contains(sf::Vector2f(enemyPos.x, worldPos.y)))
 		{
 			dmg = user->getAttackDamage();
 			entity->takeDamage(dmg);
@@ -194,6 +194,11 @@ void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gam
 				int entityDmg = entity->getAttackDamage();
 				user->takeDamage(entityDmg);
 				encounter(user, entity, gameWorld1);		//recursive to keep calling until entity iead.
+			}
+			if (!user->isAlive())
+			{
+				delete user;
+				break;
 			}
 			else
 			{
