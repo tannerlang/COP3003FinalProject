@@ -54,7 +54,7 @@ void Game::update()
 					this->window->close();
 				}
 			}
-			this->encounter(this->user, this->entity, gameWorld1);
+			encounter();
 			this->render(); 
 			this->entity->skeleton_Movement();
 			this->entity->aggression(this->user,this->entity,this->gameWorld1);
@@ -155,40 +155,39 @@ void Game::selectCharacterWidget()
 }
 
 
-void Game::encounter(Playable_Character* user, Skeleton* entity, gameWorld gameWorld1)
+void Game::encounter()
 {
-	if (user->getState() == 2)
-	{
-		sf::Vector2f userPos = user->sprite.getPosition();
-		sf::Vector2f enemyPos = entity->sprite.getPosition();
 		//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range (HAVE TO FIGURE OUT ALL THAT LOGIC)
 
 		int dmg;
-		while (this->user->isAlive()) //TODO: need to give functionality for dying for both playable and enemy characters
-		{
+		
 			//TODO: maybe figure out how to make the user->sprite have a larger global bounds that is invisible to act as a boundary range.
-			if (user->hitbox->hitbox.getGlobalBounds().contains(enemyPos.x, enemyPos.y))//create range boundry for user
+			if (this->user->hitbox->sprite.getGlobalBounds().contains(this->entity->hitbox->sprite.getPosition().x, this->entity->hitbox->sprite.getPosition().y)) //create range boundry for user
 			{
-				dmg = user->getAttackDamage();
-				entity->takeDamage(dmg);
-				if (entity->isAlive())
-				{
-					int entityDmg = entity->getAttackDamage();
-					user->takeDamage(entityDmg);
-					encounter(user, entity, gameWorld1);		//recursive to keep calling until entity iead.
-				}
-				if (!user->isAlive())
-				{
-					delete user;
-					break;
-				}
-				else
-				{
-					delete entity;
-					break;
-				}
+					dmg = this->user->getAttackDamage();
+					this->entity->takeDamage(dmg);
+					if (this->entity->isAlive())
+					{
+						int entityDmg = this->entity->getAttackDamage();
+						this->user->takeDamage(entityDmg);
+						encounter();		//recursive to keep calling until entity iead.
+					}
+					else if (!this->user->isAlive())
+					{
+						//destroy(user);
+					}
+					else if (!this->entity->isAlive())
+					{
+						//destroy(entity);
+					}
+					
+				
 			}//break if out of range
-		}
-	}
+		
 	
+}
+
+void Game::destroy(Character* obj)
+{
+	delete obj;
 }

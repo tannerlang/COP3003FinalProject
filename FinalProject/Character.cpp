@@ -71,7 +71,14 @@ float Character::get_Movement_Speed()
 
 bool Character::isAlive()
 {
-	return get_Health() > 0;
+	if (get_Health() > 0)
+	{
+		return true;
+	}
+	else if (get_Health() <= 0)
+	{
+		return false;
+	}
 }
 
 int Character::getAttackDamage()
@@ -87,5 +94,10 @@ void Character::takeDamage(int damage)
 void Character::createHitbox(sf::Sprite& sprite, const float offset_x, const float offset_y, float width, float height)
 {
 	this->hitbox = new Hitbox(sprite, offset_x, offset_y, width, height);
+}
+
+void Character::set_Damage()
+{
+	damage = 10;
 }
 

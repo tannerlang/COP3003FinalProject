@@ -10,7 +10,7 @@ private:
 
 protected:
 	//core stats
-	int health;
+	unsigned int health;
 	int max_health;
 	int level;
 	int exp;
@@ -50,9 +50,10 @@ public:
 	void update();
 	void render(sf::RenderTarget* target);
 	virtual bool isAlive();
-	int getAttackDamage();
-	void takeDamage(int damage);
+	virtual int getAttackDamage();
+	virtual void takeDamage(int damage);
 	void createHitbox(sf::Sprite& sprite, const float offset_x, const float offset_y, float width, float height);
+	virtual void set_Damage();
 	int getState()
 	{
 		return state_;
