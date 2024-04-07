@@ -37,11 +37,15 @@ void Character::update()
 
 void Character::render(sf::RenderTarget* target)
 {
+
+	target.draw(this->sprite);
+
 	target->draw(this->hitbox->sprite);	
 	if (this->hitbox)
 	{
 		this->hitbox->render(*target);
 	}
+
 }
 
 

@@ -1,12 +1,15 @@
 #include "NPC_Enemy.h"
 
-NPC_Enemy::NPC_Enemy(float posX, float posY)
+
+
+NPC_Enemy::NPC_Enemy()
 {
 	this->initTexture();
 	this->initSprite();
 	this->set_Damage();
+	this->set_Movement_Speed(3.f);
 	
-};
+}
 
 void NPC_Enemy::set_Damage()
 {
@@ -28,13 +31,4 @@ void NPC_Enemy::initSprite()
 	this->sprite.setTexture(this->texture);
 }
 
-void NPC_Enemy::update()
-{
-
-}
-
-void NPC_Enemy::render(sf::RenderTarget* target)
-{
-	target->draw(this->sprite);
-}
 
