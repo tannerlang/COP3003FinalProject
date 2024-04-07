@@ -56,6 +56,7 @@ void Game::update()
 			}
 			this->render(); 
 			this->entity->skeleton_Movement();
+			this->entity->aggression(user,entity,gameWorld1);
 			this->entity->update(this->spawnTimer, this->spawnTimerMax);
 			//MOVE Player
 			this->user->handleInput(user);				//handles user input, also a simple state machine for player state
@@ -152,7 +153,7 @@ void Game::selectCharacterWidget()
 	
 }
 
-void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gameWorld1)
+void Game::encounter(Playable_Character* user, Skeleton* entity, gameWorld* gameWorld1)
 {
 	sf::Vector2f userPos = user->sprite.getPosition();
 	sf::Vector2f enemyPos = entity->sprite.getPosition();

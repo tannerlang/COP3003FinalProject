@@ -2,6 +2,9 @@
 #define NPC_ENEMY_H
 
 #include "Character.h"
+#include "Playable_Character.h"
+#include "gameWorld.h"
+
 class NPC_Enemy : public virtual Character
 {
 
@@ -14,7 +17,7 @@ public:
 	void initTexture();
 	void initSprite();
 	void set_Damage();
-	void update(float spawnTimer, float spawnTimerMax);
+	void aggression();
 	
 	
 };
