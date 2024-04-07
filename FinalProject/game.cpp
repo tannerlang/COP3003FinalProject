@@ -165,7 +165,7 @@ void Game::encounter(Playable_Character* user, Skeleton* entity, gameWorld gameW
 		while (this->user->isAlive()) //TODO: need to give functionality for dying for both playable and enemy characters
 		{
 			//TODO: maybe figure out how to make the user->sprite have a larger global bounds that is invisible to act as a boundary range.
-			if (this->user->hitbox->hitbox.getGlobalBounds().contains(enemyPos))//create range boundry for user
+			if (user->hitbox->hitbox.getGlobalBounds().contains(enemyPos.x, enemyPos.y))//create range boundry for user
 			{
 				dmg = user->getAttackDamage();
 				entity->takeDamage(dmg);
