@@ -39,7 +39,7 @@ void gameWorld::setUpTiles()									//populates tiles vector
 
 		for (int column = 0; column <= 30; column++)
 		{
-			tileRow.push_back(new gameTile("plains.png", x, y, true, true));		/*populates that location with a new gameTile object which places a sprite
+			tileRow.push_back(new gameTile("grass.png", x, y, true, true));		/*populates that location with a new gameTile object which places a sprite
 																						at position (x,y)*/		
 			x += 64;
 		}																					

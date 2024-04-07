@@ -11,5 +11,6 @@ public:
 	void initSprite();
 	void initText();
 	void handleInput(Playable_Character* user);
+	
 };
 
