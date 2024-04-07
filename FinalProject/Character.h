@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include<iostream>
+#include"Hitbox.h"
+
 class Character
 {
 private:
@@ -29,6 +31,7 @@ protected:
 	
 	enum State{STATE_STANDING, STATE_MOVING, STATE_ATTACKING};
 	State state_ = STATE_STANDING;
+	Hitbox* hitbox;
 
 public:
 	//members
@@ -43,11 +46,11 @@ public:
 	void set_Movement_Speed(float x);
 	float get_Movement_Speed();
 	void update();
-	void render(sf::RenderTarget& target);
+	void render(sf::RenderTarget* target);
 	virtual bool isAlive();
 	int getAttackDamage();
 	void takeDamage(int damage);
-	
+	void createHitbox(sf::Sprite& sprite, const float offset_x, const float offset_y, float width, float height);
 	
 
 };

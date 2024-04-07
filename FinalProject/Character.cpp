@@ -21,22 +21,31 @@ Character::Character()
 	agility = 20;	
 	dexterity = 20;
 
+	this->createHitbox(this->sprite, 1.f, 1.f, 64.f, 64.f);
 }
 
 Character::~Character()
 {
-
+	delete this->hitbox;								//deletes hitbox on death for cleanup.
 }
 
 //Functions
 void Character::update()
 {
-
+	this->hitbox->update();
 }
 
-void Character::render(sf::RenderTarget& target)
+void Character::render(sf::RenderTarget* target)
 {
+
 	target.draw(this->sprite);
+
+	target->draw(this->hitbox->sprite);	
+	if (this->hitbox)
+	{
+		this->hitbox->render(*target);
+	}
+
 }
 
 
@@ -73,5 +82,10 @@ int Character::getAttackDamage()
 void Character::takeDamage(int damage)
 {
 	set_Health(health - damage);
+}
+
+void Character::createHitbox(sf::Sprite& sprite, const float offset_x, const float offset_y, float width, float height)
+{
+	this->hitbox = new Hitbox(sprite, offset_x, offset_y, width, height);
 }
 

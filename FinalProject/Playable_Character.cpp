@@ -9,10 +9,7 @@ Playable_Character::Playable_Character()
 
 void Playable_Character::moveCharacter(const int dirX,const int dirY)
 {
-	
-
-    this->sprite.move(this->get_Movement_Speed() * dirX, this->get_Movement_Speed() * dirY);                   //need to figure out how to do this with the sprite created in a child class.
-                                                                                                             //for now leave it to make sure it works
+    this->sprite.move(this->get_Movement_Speed() * dirX, this->get_Movement_Speed() * dirY);                  //moves character                                                                                                         //for now leave it to make sure it works
 }
 
 void Playable_Character::handleInput(Playable_Character* user)

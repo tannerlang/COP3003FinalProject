@@ -101,7 +101,7 @@ void Game::render()
 	if (CharacterSelected)					
 	{
 		//Draw Player
-		this->user->render(*this->window);
+		this->user->render(this->window);
 
 		//Draw Enemy		
 		this->enemies->render(*this->window);
@@ -132,8 +132,11 @@ void Game::initEnemy()
 {
 	this->spawnTimerMax = 50.f;
 	this->spawnTimer = this->spawnTimerMax;
+  EnemySpawning
 
 	this->enemies = &enemy;
+
+
 }
 
 
