@@ -7,6 +7,7 @@ class Skeleton : public NPC_Enemy
 public:
 
 	Skeleton();
+	~Skeleton();
 	void initTexture();
 	void initSprite();
 	void set_Damage();
@@ -14,6 +15,8 @@ public:
 	void moveSkeleton(const int dirX, const int dirY);
 	void skeleton_Movement();
 	void aggression(Playable_Character* user, Skeleton* entity, gameWorld gameWorld1);
+	int getAttackDamage();
+	void takeDamage(int damage);
 };
 
 #endif //!SKELETON_H

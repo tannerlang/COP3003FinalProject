@@ -64,7 +64,7 @@ void Brawler::handleInput(Playable_Character* user)				//overriding handleinput 
 			if (!this->texture.loadFromFile("Brawler_NorthFace_Default_64x64.png"))	//Displays PNG for Brawler
 			{
 				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
-			}
+			}			
 			state_ = STATE_MOVING;
 		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
@@ -118,5 +118,21 @@ void Brawler::attack()
 		}*/
 	}
 }
-//
+int Brawler::getAttackDamage()
+{
+	return damage;
+}
+
+void Brawler::set_Damage()
+{
+	damage = 55;
+}
+
+void Brawler::takeDamage(int damage)
+{
+	int health;
+	health = this->get_Health();
+	health = health - damage;
+	this->set_Health(health);
+}
 	
