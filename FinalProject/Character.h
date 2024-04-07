@@ -26,12 +26,16 @@ protected:
 	int strength;	//damage
 	int agility;	//dodge and speed
 	int dexterity;	//attack-speed and c
-	sf::Texture texture;
-	sf::Sprite sprite;
+	
 	enum State{STATE_STANDING, STATE_MOVING, STATE_ATTACKING};
 	State state_ = STATE_STANDING;
 
 public:
+	//members
+	sf::Texture texture;
+	sf::Sprite sprite;
+
+	//methods
 	Character();
 	virtual ~Character();
 	int get_Health();
@@ -43,6 +47,7 @@ public:
 	virtual bool isAlive();
 	int getAttackDamage();
 	void takeDamage(int damage);
+	
 	
 
 };

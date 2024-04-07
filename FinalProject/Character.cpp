@@ -74,3 +74,4 @@ void Character::takeDamage(int damage)
 {
 	set_Health(health - damage);
 }
+

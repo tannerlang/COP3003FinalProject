@@ -79,6 +79,8 @@ void Game::update()
 			this->updateEnemies();
 			//MOVE Player
 			this->user->handleInput(user);				//handles user input, also a simple state machine for player state
+			this->user->update();
+			
 		}
 	}
 }
@@ -175,13 +177,15 @@ void Game::selectCharacterWidget()
 
 void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gameWorld1)
 {
+	sf::Vector2f worldPos = user->sprite.getPosition();
+	sf::Vector2f enemyPos = entity->sprite.getPosition();
 	//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range
 	//figure out all of that logic.
-	/*int dmg;
-	while (this->user->isAlive())
+	int dmg;
+	while (this->user->isAlive()) //TODO: need to give functionality for dying for both playable and enemy characters
 	{
-		
-		if (entity->getPosition() == user->getPosition()+-1 in every direction)
+		//TODO: maybe figure out how to make the user->sprite have a larger global bounds that is invisible to act as a boundary range.
+		if (user->sprite.getGlobalBounds().contains(sf::Vector2f(enemyPos.x + 1 , worldPos.y + 1)))
 		{
 			dmg = user->getAttackDamage();
 			entity->takeDamage(dmg);
@@ -193,8 +197,9 @@ void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gam
 			}
 			else
 			{
+				delete entity;
 				break;
 			}
 		}
-	}*/
+	}
 }
