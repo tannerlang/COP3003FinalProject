@@ -179,8 +179,8 @@ void Game::encounter(Playable_Character* user, NPC_Enemy* entity, gameWorld* gam
 {
 	sf::Vector2f worldPos = user->sprite.getPosition();
 	sf::Vector2f enemyPos = entity->sprite.getPosition();
-	//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range
-	//figure out all of that logic.
+	//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range (HAVE TO FIGURE OUT ALL THAT LOGIC)
+	
 	int dmg;
 	while (this->user->isAlive()) //TODO: need to give functionality for dying for both playable and enemy characters
 	{
