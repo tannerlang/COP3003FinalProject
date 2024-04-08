@@ -11,8 +11,7 @@ Skeleton::Skeleton()
 
 Skeleton::~Skeleton()
 {
-	
-
+	//delete sprite.Spri
 }
 void Skeleton::set_Damage()
 {

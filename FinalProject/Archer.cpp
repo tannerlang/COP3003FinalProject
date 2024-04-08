@@ -79,15 +79,14 @@ void Archer::handleInput(Playable_Character* user)
 
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
+			state_ = STATE_ATTACKING;			//Code works without this. 
 			if (!this->texture.loadFromFile("Archer_Attack.png"))	//Displays PNG for Brawler
 			{
 				std::cout << "Texture Load Failure";	//Displays error in case some sort of failure
 			}
-			//state_ = STATE_ATTACKING;			//Code works without this. 
-			//user->attack();
+			user->attack();
 			
 		}
-		break;
 
 	case Character::STATE_MOVING:
 		if (sf::Event::KeyReleased)

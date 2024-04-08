@@ -22,8 +22,19 @@ Game::Game()
 Game::~Game()
 {
 	delete this->window;
-	delete this->user;
-	delete this->entity;
+
+	if (this->user->isAlive())
+	{
+		
+		delete this->user;
+	}
+	
+	if (this->entity->isAlive())
+	{
+		entity = nullptr;
+		delete this->entity;
+	}
+	
 }
 
 //functions
@@ -54,6 +65,7 @@ void Game::update()
 					this->window->close();
 				}
 			}
+			this->debugEvents();
 			encounter();
 			this->render(); 
 			this->entity->skeleton_Movement();
@@ -158,7 +170,6 @@ void Game::selectCharacterWidget()
 void Game::encounter()
 {
 		//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range (HAVE TO FIGURE OUT ALL THAT LOGIC)
-
 		int dmg;
 		while (this->user->getState() == 2)
 		{
@@ -171,27 +182,38 @@ void Game::encounter()
 				{
 					int entityDmg = this->entity->getAttackDamage();
 					this->user->takeDamage(entityDmg);
-					encounter();		//recursive to keep calling until entity iead.
+					encounter();		//recursive to keep calling until entity dead.
 				}
 				else if (!this->user->isAlive())
 				{
-					destroy(user);
+					delete this->user;
 				}
 				else if (!this->entity->isAlive())
 				{
-					destroy(entity);
+					delete this->entity;
 				}
-
-
 			}//break if out of range
 		}
-			
-		
-	
 }
 
 void Game::destroy(Character* obj)
 {
 	obj = nullptr;
 	delete obj;
+}
+
+void Game::debugEvents()
+{
+	//-----------------------SKELETON DEBUGGING-------------
+			//TESTING USER DELETION
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+	{
+		//delete entity;
+	}
+	//-------------------------------------------------------
+
+	//---------------------USER DEBUGGING-----------------
+		//
+	//-------------------------------------------------------
+
 }

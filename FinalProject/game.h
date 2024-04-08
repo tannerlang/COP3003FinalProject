@@ -62,4 +62,5 @@ public:
 	void encounter();
 	
 	void destroy(Character* obj);
+	void debugEvents();
 };
