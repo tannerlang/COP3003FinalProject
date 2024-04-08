@@ -17,7 +17,7 @@ public:
 	void initTexture();
 	void initSprite();
 	void set_Damage();
-	void aggression();
+	void aggression();			//This is here for Boss & Skeleton
 	void update(float spawnTimer, float spawnTimerMax);
 	
 };
