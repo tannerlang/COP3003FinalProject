@@ -51,14 +51,14 @@ void Skeleton::moveSkeleton(const int dirX, const int dirY)
 	this->sprite.move(this->get_Movement_Speed() * dirX, this->get_Movement_Speed() * dirY);                  //moves character                                                                                                         //for now leave it to make sure it works
 }
 
-void Skeleton::skeleton_Movement()
+void Skeleton::skeleton_Movement()		//this function might be useless. Need to try removing from here and game.cpp
 {
 	
-	int Random = rand() % 4;
-	while (isAlive()) {
+	int Random = rand() % 4;			//Generates a random int from 0-3
+	while (isAlive()) {					//Still working on incorporating isAlive
 		switch (Random)
 		{
-		case (0):
+		case (0):						//While number is being generated the skeleton is being moved
 			moveSkeleton(1.f, 1.f);
 		case (1):
 			moveSkeleton(-1.f, 1.f);
@@ -72,29 +72,45 @@ void Skeleton::skeleton_Movement()
 	}
 }
 
-void Skeleton::aggression(Playable_Character* user, Skeleton* entity, gameWorld gameWorld1)
+void Skeleton::aggression(Playable_Character* user, Skeleton* entity, gameWorld gameWorld1)			//Aggression is meant to keep skeleton moving towards character
+{																									//Need to try to incorporate isAlive also more of a radius rather than constantly moving towards player
+	sf::Vector2f userPos = user->sprite.getPosition();												//Getting position of Player & Skeleton
+	sf::Vector2f enemyPos = entity->sprite.getPosition();		
+
+	if (distance(userPos.x, userPos.y, enemyPos.x, enemyPos.y) < 100.f) 
+	{
+		if (userPos.x > enemyPos.x)																		//if ladder to keep Skeleton moving towards player
+		{
+			moveSkeleton(1.f, 0.f);
+		}
+		if (userPos.y > enemyPos.y)
+		{
+			moveSkeleton(0.f, 1.f);
+		}
+		if (userPos.x < enemyPos.x)
+		{
+			moveSkeleton(-1.f, 0.f);
+		}
+		if (userPos.y < enemyPos.y)
+		{
+			moveSkeleton(0.f, -1.f);
+		}
+	}
+
+	if (distance(userPos.x, userPos.y, enemyPos.x, enemyPos.y) < 20.f)
+	{
+		int playerHealth;
+		playerHealth = user->get_Health();
+		playerHealth = playerHealth - this->getAttackDamage();
+		user->set_Health(playerHealth);
+	}
+	
+
+}
+
+double Skeleton::distance(double x1, double y1, double x2, double y2)
 {
-	sf::Vector2f userPos = user->sprite.getPosition();
-	sf::Vector2f enemyPos = entity->sprite.getPosition();
-
-	if (userPos.x > enemyPos.x) 
-	{
-		moveSkeleton(1.f, 0.f);
-	}
-	if (userPos.y > enemyPos.y)
-	{
-		moveSkeleton(0.f, 1.f);
-	}
-	if (userPos.x < enemyPos.x)
-	{
-		moveSkeleton(-1.f, 0.f);
-	}
-	if (userPos.y < enemyPos.y)
-	{
-		moveSkeleton(0.f, -1.f);
-	}
-
-
+	return std::sqrt(std::pow((x2 - x1), 2) + std::pow((y2 - y1), 2));				//Distance formula to detect player
 }
 
 int Skeleton::getAttackDamage()
