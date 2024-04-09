@@ -73,8 +73,8 @@ void Game::update()
 			this->render();
 			this->debugEvents();
 
-
-			if (this->entity != nullptr)
+			//calls encounter function (handles combat)
+			if (this->entity != nullptr && this->user != nullptr)
 			{
 				encounter();
 			}
@@ -214,6 +214,7 @@ void Game::encounter()
 				else if (!this->user->isAlive())
 				{
 					delete this->user;
+					this->user = nullptr;
 				}
 				else if (!this->entity->isAlive())
 				{
