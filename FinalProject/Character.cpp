@@ -101,3 +101,5 @@ void Character::set_Damage()
 	damage = 10;
 }
 
+
+

@@ -14,6 +14,8 @@ void Game::initWindow()
 Game::Game()
 {
 	this->selectCharacterWidget();
+
+	
 	this->initWindow();
 	this->initEnemy();
 	
@@ -27,12 +29,14 @@ Game::~Game()
 	{
 		
 		delete this->user;
+		this->user = nullptr;
 	}
-	
-	if (this->entity->isAlive())
+
+	if (this->entity != nullptr)
 	{
-		entity = nullptr;
+		
 		delete this->entity;
+		this->entity = nullptr;
 	}
 	
 }
@@ -65,16 +69,29 @@ void Game::update()
 					this->window->close();
 				}
 			}
+
+			this->render();
 			this->debugEvents();
-			encounter();
-			this->render(); 
+
+
+			if (this->entity != nullptr)
+			{
+				encounter();
+			}
+
+			if (this->entity != nullptr)
+			{ 
 			this->entity->skeleton_Movement();
 			this->entity->aggression(this->user,this->entity,this->gameWorld1);
 			this->entity->update(this->spawnTimer, this->spawnTimerMax);
+			}
+
 			//MOVE Player
-			this->user->handleInput(user);				//handles user input, also a simple state machine for player state
-			this->user->update();
-			
+			if (this->user != nullptr)
+			{
+				this->user->handleInput(user);				//handles user input, also a simple state machine for player state
+				this->user->update();
+			}
 		}
 	}
 }
@@ -97,10 +114,18 @@ void Game::render()
 	if (CharacterSelected)					
 	{
 		//Draw Player
-		this->user->render(this->window);
+		if (this->user != nullptr)
+		{
+			this->user->render(this->window);
+		}
 
-		//Draw Enemy		
-		this->entity->render(this->window);
+		if (this->entity != nullptr)
+		{
+			//Draw Enemy		
+			this->entity->render(this->window);
+		}
+		
+		
 		
 		//Draw map
 		this->window->display();
@@ -171,13 +196,15 @@ void Game::encounter()
 {
 		//OBJECTIVE: we can call this function when encountering we use the attack function and there is an enemy in range (HAVE TO FIGURE OUT ALL THAT LOGIC)
 		int dmg;
-		while (this->user->getState() == 2)
+		while (this->user->getState() == 2 && this->entity != nullptr && this->user != nullptr)
 		{
 			//TODO: maybe figure out how to make the user->sprite have a larger global bounds that is invisible to act as a boundary range.
 			if (this->user->hitbox->sprite.getGlobalBounds().contains(this->entity->hitbox->sprite.getPosition().x, this->entity->hitbox->sprite.getPosition().y)) //create range boundry for user
 			{
 				dmg = this->user->getAttackDamage();
+
 				this->entity->takeDamage(dmg);
+
 				if (this->entity->isAlive())
 				{
 					int entityDmg = this->entity->getAttackDamage();
@@ -191,6 +218,7 @@ void Game::encounter()
 				else if (!this->entity->isAlive())
 				{
 					delete this->entity;
+					this->entity = nullptr;
 				}
 			}//break if out of range
 		}
@@ -208,7 +236,8 @@ void Game::debugEvents()
 			//TESTING USER DELETION
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
 	{
-		//delete entity;
+		delete this->entity;
+		this->entity = nullptr;
 	}
 	//-------------------------------------------------------
 
