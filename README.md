@@ -1,1 +1,1 @@
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/tannerlang/COP3003FinalProject/badge)](https://api.securityscorecards.dev/projects/github.com/tannerlang/COP3003FinalProject)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/tannerlang/COP3003FinalProject)
